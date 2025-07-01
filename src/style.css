@@ -1,0 +1,215 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* GENERAL STYLING  */
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eee;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  appearance: none;
+  background-color: rgb(0, 0, 0, 0);
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.content {
+  width: clamp(500px, 1400px, 90%);
+  text-align: center;
+}
+
+/* HEADER  */
+
+header {
+  background-color: black;
+  color: white;
+  width: clamp(500px, 1400px, 90%);
+  border-radius: 20px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px clamp(80px, 80px, 20px);
+  height : 120px;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+header ul {
+  display: flex;
+  gap: 2em;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+li .selected,
+button:hover {
+  text-decoration: underline 10px solid orangered;
+}
+
+/* HOME  */
+.home {
+  text-align: center;
+}
+
+h2.home {
+  appearance: none;
+  font-weight: 100;
+  font-size: 4em;
+  margin-top: 1.5em;
+}
+
+h2.home strong {
+  font-weight: 500;
+}
+
+p.home {
+  font-size: 1.2em;
+  border: none;
+  width: fit-content;
+  margin: auto;
+  margin-top: 150px;
+  text-decoration: underline orangered solid 9px;
+  line-height: 2.5em;
+}
+
+/* MENU  */
+h2.menu {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 3em;
+}
+
+.menu-title {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.4em;
+}
+
+.menu-content {
+  font-size: 1.3em;
+}
+
+ul.menu li {
+  padding: 20px;
+}
+
+ul.menu {
+  width: fit-content;
+  margin: auto;
+  padding-bottom: 40px;
+  border-bottom: 4px solid orangered;
+}
+
+/* ABOUT  */
+.content-box {
+  margin: auto;
+  margin-top: 120px;
+  width: clamp(500px, 500px, 90%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border : 8px solid orangered;
+  padding: 40px;
+}
+
+.content-box h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2.5em;
+  color: #222;
+}
+
+.content-box p {
+  font-size: 1.5em;
+  color: #444;
+}
