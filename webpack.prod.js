@@ -19,7 +19,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/template.html",
         }),
-        [new MiniCssExtractPlugin()],
+        new MiniCssExtractPlugin(),
     ],
     module: {
         rules: [

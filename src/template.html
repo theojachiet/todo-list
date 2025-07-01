@@ -1,16 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-list</title>
 </head>
+
 <body>
     <div class="container">
         <nav>
-            <div class="profile"></div>
-            <div class="tasks"></div>
-            <div class="projects"></div>
+            <div class="profile">
+                <img src="./images/account-circle.svg" alt="Account">
+                <p>Welcome to your Tasks</p>
+                <hr>
+            </div>
+            <div class="tasks">
+                <div class="new-task">
+                    <button class="new-task">
+                        <img src="./images/plus-circle.svg" alt="plus sign green">
+                        <p>New Task</p>
+                    </button>
+                </div>
+                <div class="sort-options">
+                    <button class="due-date">
+                        <img src="./images/sort-calendar-ascending.svg" alt="Calendar sort">
+                        <p>Due date</p>
+                    </button>
+                    <button class="status">
+                        <img src="./images/sort-bool-ascending.svg" alt="checked sort">
+                        <p>Status</p>
+                    </button>
+                    <button class="priority">
+                        <img src="./images/sort-ascending.svg" alt="sort priority">
+                        <p>Priority</p>
+                    </button>
+                    <hr>
+                </div>
+            </div>
+            <div class="projects">
+                <div class="new-project">
+                    <button class="new-project">
+                        <img src="./images/plus-circle-red.svg" alt="plus project">
+                        <p>New Project</p>
+                    </button>
+                    <hr>
+                </div>
+                <div class="projects-list">
+                    <button class="project-item">
+                        <img src="./images/folder.svg" alt="folder">
+                        <p>Project 1</p>
+                    </button>
+                    <button class="project-item">
+                        <img src="./images/folder.svg" alt="folder">
+                        <p>Project 2</p>
+                    </button>
+                    <button class="project-item">
+                        <img src="./images/folder.svg" alt="foldder">
+                        <p>Project 3</p>
+                    </button>
+                </div>
+            </div>
         </nav>
         <section>
             <h1></h1>
@@ -22,4 +72,5 @@
         </section>
     </div>
 </body>
+
 </html>
