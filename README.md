@@ -1,2 +1,2 @@
-# restaurant-page
-Practicing DOM Manipulation and webpack setups with this simple restaurant page.
+# TODO-LIST
+Simple todo list app
