@@ -1,0 +1,26 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: rgba(254,254,254,255);
+  color: #333;
+  display: flex;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.2rem;
+}
+
+img {
+  max-width: 1.8em;
+}
+
+button {
+    appearance: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-family: inherit;
+}
+
+hr {
+    border: 1px solid gray;
+}
