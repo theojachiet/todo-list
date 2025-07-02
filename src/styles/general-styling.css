@@ -3,7 +3,6 @@
 body {
   background-color: rgba(254,254,254,255);
   color: #333;
-  display: flex;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 1.2rem;
 }
@@ -23,4 +22,8 @@ button {
 
 hr {
     border: 1px solid gray;
+}
+
+.container {
+  display: flex;
 }
