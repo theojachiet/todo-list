@@ -20,6 +20,4 @@ task4.addTask();
 task3.changeStatus();
 test.changeStatus();
 
-displayTasks(sortByPriority(tasks));
 displayTasks(sortByStatus(tasks));
-displayTasks(sortByDueDate(tasks));
