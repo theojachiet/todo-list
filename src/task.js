@@ -25,15 +25,16 @@ class Task {
 class Project {
     constructor(name) {
         this.name = name;
+        this.list = [];
     }
 
     addTaskToProject(Task) {
-        projects.push(Task);
+        list.push(Task);
     }
 
     removeTaskFromProject(Task) {
-        if (projects.includes(Task)) {
-            projects.splice(projects.indexOf(Task), 1);
+        if (list.includes(Task)) {
+            list.splice(list.indexOf(Task), 1);
         } else {
             console.log('Error : task not in project');
         }

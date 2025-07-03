@@ -9,5 +9,12 @@ export function sortByPriority(array) {
 
 export function sortByStatus(array) {
     const newArr = [...array];
-    return newArr.sort((a, b) => b.status - a.status);
+    //Sort by status (not done first) and then by due date (oldest first)
+    return newArr.sort((a, b) => a.status - b.status || new Date(a.dueDate) - new Date(b.dueDate));
+}
+
+export function sortByDueDate(array) {
+    const newArr = [...array];
+    //Oldest first
+    return newArr.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
 }
