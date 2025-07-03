@@ -6,8 +6,9 @@ import './styles/section.css';
 import {Task, Project, tasks, projects} from './task';
 import { displayTasks } from './DisplayDOM';
 import { sortByDueDate, sortByPriority, sortByStatus } from './sorting';
+import { setupListeners } from './EventHandler';
 
-const test = new Task('test', 'description', '2025-07-18', 0);
+const test = new Task('test', 'description', '203-07-18', 0);
 const task2 = new Task('task2', 'another task', '2024-07-18', 1);
 const task3 = new Task('task3', 'another task', '2025-07-19', 0);
 const task4 = new Task('task4', 'another task', '2004-08-23', 2);
@@ -20,4 +21,9 @@ task4.addTask();
 task3.changeStatus();
 test.changeStatus();
 
-displayTasks(sortByStatus(tasks));
+const sortedByDates = sortByDueDate(tasks);
+const sortedByStatus = sortByStatus(tasks);
+const sortetdByPriority = sortByPriority(tasks);
+
+displayTasks(sortedByDates);
+setupListeners();

@@ -10,7 +10,7 @@ import { Task, Project, tasks, projects } from './task';
 const container = document.querySelector('section');
 
 export function displayTasks(array) {
-    for (let task of tasks) {
+    for (let task of array) {
         //task container
         const line = document.createElement('div');
         line.classList.add('line');
@@ -70,8 +70,6 @@ export function displayTasks(array) {
 
         container.appendChild(line);
     }
-
-    console.log(array);
 }
 
 function displayProjects(projects) {
