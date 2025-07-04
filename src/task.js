@@ -10,6 +10,7 @@ class Task {
         this.project = project; //Maybe could be the [0] in a project array by default ?
         this.status = status;
         this.id = crypto.randomUUID();
+        tasks.push(this);
     }
 
     addTask() {
@@ -27,10 +28,11 @@ class Project {
     constructor(name) {
         this.name = name;
         this.list = [];
+        projects.push(this);
     }
 
     addTaskToProject(Task) {
-        list.push(Task);
+        this.list.push(Task);
     }
 
     removeTaskFromProject(Task) {

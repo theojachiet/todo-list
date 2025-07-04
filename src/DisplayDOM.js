@@ -5,11 +5,13 @@ import priorityHigh from './images/alert-circle-high.svg';
 import priorityMedium from './images/alert-circle-medium.svg';
 import priorityLow from './images/alert-circle-low.svg';
 import deleteIconImg from './images/trash-can.svg';
+import folderImg from './images/folder.svg';
 
 
 import { Task, Project, tasks, projects } from './task';
 
 const container = document.querySelector('section');
+const projectContainer = document.querySelector('.projects-list');
 
 export function displayTasks(array) {
 
@@ -85,6 +87,21 @@ export function displayTasks(array) {
     }
 }
 
-function displayProjects(projects) {
+export function displayProjects(array) {
+    for(let project of array) {
+        //Creating button container
+        const projectItem = document.createElement('button');
+        projectItem.classList.add('project-item');
 
+        //Filling elements
+        const folderImage = document.createElement('img');
+        folderImage.src = folderImg;
+        const projectName = document.createElement('p');
+        projectName.textContent = project.name;
+
+        //Appending
+        projectItem.appendChild(folderImage);
+        projectItem.appendChild(projectName);
+        projectContainer.appendChild(projectItem);
+    }
 }
