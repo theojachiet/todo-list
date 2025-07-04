@@ -12,7 +12,7 @@ import { Task, Project, tasks, projects } from './task';
 const container = document.querySelector('section');
 
 export function displayTasks(array) {
-    
+
     for (let task of array) {
         //task container
         const line = document.createElement('div');
@@ -43,11 +43,11 @@ export function displayTasks(array) {
         }
         const taskTitle = document.createElement('h2');
         taskTitle.textContent = task.title;
-        if (task.Project) {
-            const taskProject = document.createElement('p');
-            taskProject.textContent = `( ${task.Project} )`;
+        const taskProject = document.createElement('p');
+        if (task.project) {
+            taskProject.textContent = `( ${task.project} )`;
         }
-        
+
         //Priority
         const priorityIcon = document.createElement('img');
         if (task.priority === 2) {
@@ -68,7 +68,7 @@ export function displayTasks(array) {
         //Appending to containers
         taskContainer.appendChild(checkbox);
         taskContainer.appendChild(taskTitle);
-        if (task.Project) {
+        if (task.project) {
             taskContainer.appendChild(taskProject);
         }
 

@@ -1,5 +1,6 @@
 section {
     flex-grow: 1;
+    margin-left: clamp(280px, 20vw, 20vw);;
 }
 
 /* TITLE  */
@@ -42,6 +43,11 @@ section h1 {
     gap: 1em;
 }
 
+.task p {
+    color: gray;
+    text-wrap: nowrap;
+}
+
 .line .priority {
     flex: 1;
     display: flex;
@@ -58,9 +64,4 @@ section h1 {
 
 .main .invisible {
     opacity: 0;
-}
-
-.main .delete-task {
-    position: fixed;
-    left: 88.5%;
 }
