@@ -8,7 +8,7 @@ import deleteIcon from './images/trash-can.svg';
 
 import { displayTasks } from "./DisplayDOM";
 import { sortByDueDate, sortByPriority, sortByStatus } from "./sorting";
-import { tasks } from "./task";
+import { tasks, projects } from "./task";
 
 const container = document.querySelector('section');
 
@@ -61,6 +61,12 @@ function setupListeners() {
         const deleteButton = line.querySelector('.delete-task');
         if (!deleteButton) return;
         deleteButton.classList.add('invisible');
+    }));
+
+    //Display specific project
+    const projectsItems = [...document.querySelectorAll('.project-item')];
+    projectsItems.forEach(project => project.addEventListener('click', () => {
+        console.log('project');
     }));
 }
 

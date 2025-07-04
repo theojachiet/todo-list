@@ -7,6 +7,7 @@ nav {
     background-color: rgb(251,249,247);
     width: clamp(280px, 20vw, 20vw);
     position: fixed;
+    padding-right: 0;
 }
 
 /* PROFILE  */
@@ -31,7 +32,8 @@ nav .new-task {
     align-items: center;
     gap: 1em;
     width: 100%;
-    padding-bottom: 1.5em;
+    margin-bottom: 1em;
+    padding: 0.8em 0.5em;
 }
 
 nav .new-task img {
@@ -42,7 +44,7 @@ nav .new-task img {
 nav .sort-options {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 0.2em;
     margin-left: 0.5em;
     padding-bottom: 1.5em;
 }
@@ -55,6 +57,7 @@ nav .sort-options button {
     display: flex;
     align-items: center;
     gap: 1em;
+    padding: 0.8em;
 }
 
 /* PROJECTS  */
@@ -64,7 +67,8 @@ nav .new-project {
     width: 100%;
     align-items: center;
     gap: 1em;
-    padding-bottom: 1.5em;
+    margin-bottom: 1em;
+    padding: 0.8em 0.5em;
 }
 
 nav .new-project img {
@@ -77,13 +81,13 @@ nav .projects-list button {
     gap: 1em;
     align-items: center;
     width: 100%;
+    padding: 0.8em;
 }
 
 nav .projects-list {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    margin-left: 0.5em;
+    gap: 0.2em;
 }
 
 nav .projects-list img {
@@ -92,7 +96,26 @@ nav .projects-list img {
 
 /* HOVERS  */
 
-button:hover {
-    background-color: gray;
-    border-radius: 10px;
+.projects-list button:hover, .sort-options button:hover {
+    background-color: #eee;
+    border-radius: 10px 0px 0px 10px;
+    border-right: 5px solid cornflowerblue;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+.new-task:hover {
+    background-color: rgb(20, 250, 20, 10%);
+    border-radius: 10px 0px 0px 10px;
+    border-right: 5px solid green;
+    font-weight: bold;
+    color: green;
+}
+
+.new-project:hover {
+    background-color: rgb(250, 20, 20, 5%);
+    border-radius: 10px 0px 0px 10px;
+    border-right: 5px solid red;
+    font-weight: bold;
+    color: red;
 }

@@ -24,12 +24,6 @@ const task1project2 = new Task('task1project2', 'another task', '2004-08-23', 2,
 task3.changeStatus();
 test.changeStatus();
 
-setupListeners();
-
-//Trigger sorting on page load to display tasks
-const temp = document.querySelector('.due-date');
-temp.click();
-
 function addTaskstoProjects() {
     for (let project of projects) {
         for (let task of tasks) {
@@ -39,8 +33,12 @@ function addTaskstoProjects() {
         }
     }
 }
-
-console.log(projects);
 addTaskstoProjects();
 
 displayProjects(projects);
+
+setupListeners();
+
+//Trigger sorting on page load to display tasks
+const temp = document.querySelector('.due-date');
+temp.click();
