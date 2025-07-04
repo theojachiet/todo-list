@@ -4,6 +4,7 @@ import checkCircle from './images/check-circle.svg';
 import priorityHigh from './images/alert-circle-high.svg';
 import priorityMedium from './images/alert-circle-medium.svg';
 import priorityLow from './images/alert-circle-low.svg';
+import deleteIcon from './images/trash-can.svg';
 
 import { displayTasks } from "./DisplayDOM";
 import { sortByDueDate, sortByPriority, sortByStatus } from "./sorting";
@@ -21,7 +22,7 @@ function setupListeners() {
     sortByPriorityButton.addEventListener('click', displayByPriority);
     sortByStatusButton.addEventListener('click', displayByStatus);
 
-    //Check each task button pressed
+    //Change Status of Task
     const checkboxButton = [...document.querySelectorAll('.task img')];
     checkboxButton.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -36,8 +37,34 @@ function setupListeners() {
             }
         })
     })
+
+    //Display delete button when hover
+    const lines = [...document.querySelectorAll('.line')];
+
+    lines.forEach(line => line.addEventListener('mouseenter', () => {
+        const deleteButton = line.querySelector('.delete-task');
+        if (!deleteButton) return;
+        deleteButton.classList.remove('invisible');
+
+        //Delete the element
+        deleteButton.addEventListener('click', () => {
+            const id = deleteButton.dataset.id;
+            const index = tasks.findIndex(task => task.id === id);
+            if (index === -1) return;
+            
+            tasks.splice(index, 1);
+            line?.remove();
+        })
+    }));
+    //And remove it when mouse is not over
+    lines.forEach(line => line.addEventListener('mouseleave', () => {
+        const deleteButton = line.querySelector('.delete-task');
+        if (!deleteButton) return;
+        deleteButton.classList.add('invisible');
+    }));
 }
 
+//Sorting Functions
 function displayByStatus() {
     container.textContent = '';
 

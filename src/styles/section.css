@@ -46,10 +46,21 @@ section h1 {
     flex: 1;
     display: flex;
     justify-content: end;
-    margin-right: 4rem;
+    margin-right: 5rem;
 }
 
 .line .due-date {
     margin-left: 3.5rem;
     color: green;
+}
+
+/* DELETE ICON  */
+
+.main .invisible {
+    opacity: 0;
+}
+
+.main .delete-task {
+    position: fixed;
+    left: 88.5%;
 }

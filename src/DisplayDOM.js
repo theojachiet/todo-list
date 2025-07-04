@@ -4,12 +4,15 @@ import checkCircle from './images/check-circle.svg';
 import priorityHigh from './images/alert-circle-high.svg';
 import priorityMedium from './images/alert-circle-medium.svg';
 import priorityLow from './images/alert-circle-low.svg';
+import deleteIconImg from './images/trash-can.svg';
+
 
 import { Task, Project, tasks, projects } from './task';
 
 const container = document.querySelector('section');
 
 export function displayTasks(array) {
+    
     for (let task of array) {
         //task container
         const line = document.createElement('div');
@@ -55,6 +58,13 @@ export function displayTasks(array) {
             priorityIcon.src = priorityLow;
         }
 
+        // Delete Icon
+        const deleteIcon = document.createElement('img');
+        deleteIcon.classList.add('delete-task');
+        deleteIcon.classList.add('invisible');
+        deleteIcon.src = deleteIconImg;
+        deleteIcon.dataset.id = task.id;
+
         //Appending to containers
         taskContainer.appendChild(checkbox);
         taskContainer.appendChild(taskTitle);
@@ -66,6 +76,7 @@ export function displayTasks(array) {
 
         main.appendChild(taskContainer);
         main.appendChild(priority);
+        main.appendChild(deleteIcon);
 
         line.appendChild(main);
         line.appendChild(dueDate);

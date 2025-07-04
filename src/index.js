@@ -21,9 +21,8 @@ task4.addTask();
 task3.changeStatus();
 test.changeStatus();
 
-const sortedByDates = sortByDueDate(tasks);
-const sortedByStatus = sortByStatus(tasks);
-const sortetdByPriority = sortByPriority(tasks);
-
-displayTasks(sortedByDates);
 setupListeners();
+
+//Trigger sorting on page load to display tasks
+const temp = document.querySelector('.due-date');
+temp.click();
