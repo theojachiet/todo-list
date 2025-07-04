@@ -1,5 +1,5 @@
 import { displayTasks } from "./DisplayDOM";
-import { sortByStatus } from "./sorting";
+import { sortByDueDate, sortByPriority, sortByStatus } from "./sorting";
 import { tasks } from "./task";
 
 const container = document.querySelector('section');
@@ -16,7 +16,32 @@ function setupListeners() {
 
 function displayByStatus() {
     container.textContent = '';
+    
+    const title = document.createElement('h1');
+    container.appendChild(title);
+    title.textContent = 'Sorted By Status';
+
     displayTasks(sortByStatus(tasks));
 }
 
-export {setupListeners};
+function displayByDate() {
+    container.textContent = '';
+
+    const title = document.createElement('h1');
+    container.appendChild(title);
+    title.textContent = 'Sorted By Due Date';
+
+    displayTasks(sortByDueDate(tasks));
+}
+
+function displayByPriority() {
+    container.textContent = '';
+
+    const title = document.createElement('h1');
+    container.appendChild(title);
+    title.textContent = 'Sorted By Priority';
+
+    displayTasks(sortByPriority(tasks));
+}
+
+export { setupListeners };
