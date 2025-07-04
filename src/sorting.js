@@ -1,4 +1,4 @@
-import {Task, Project, tasks, projects} from './task';
+import { Task, Project, tasks, projects } from './task';
 
 export function sortByPriority(array) {
     //New Array to keep the original task list intact
@@ -16,5 +16,5 @@ export function sortByStatus(array) {
 export function sortByDueDate(array) {
     const newArr = [...array];
     //Oldest first
-    return newArr.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+    return newArr.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
 }

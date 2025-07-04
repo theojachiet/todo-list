@@ -92,6 +92,7 @@ export function displayProjects(array) {
         //Creating button container
         const projectItem = document.createElement('button');
         projectItem.classList.add('project-item');
+        projectItem.dataset.id = project.id;
 
         //Filling elements
         const folderImage = document.createElement('img');

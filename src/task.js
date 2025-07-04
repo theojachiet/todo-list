@@ -27,6 +27,7 @@ class Task {
 class Project {
     constructor(name) {
         this.name = name;
+        this.id = crypto.randomUUID();
         this.list = [];
         projects.push(this);
     }

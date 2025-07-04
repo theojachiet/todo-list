@@ -51,7 +51,7 @@ function setupListeners() {
             const id = deleteButton.dataset.id;
             const index = tasks.findIndex(task => task.id === id);
             if (index === -1) return;
-            
+
             tasks.splice(index, 1);
             line?.remove();
         })
@@ -64,13 +64,28 @@ function setupListeners() {
     }));
 
     //Display specific project
-    const projectsItems = [...document.querySelectorAll('.project-item')];
-    projectsItems.forEach(project => project.addEventListener('click', () => {
-        console.log('project');
-    }));
+    document.querySelector('.projects-list').addEventListener('click', displayByProject);
+
 }
 
-//Sorting Functions
+function displayByProject(e) {
+    const btn = e.target.closest('.project-item');
+    if (!btn) return;
+
+    const id = btn.dataset.id;
+    const project = projects.find(project => project.id === id);
+    if (!project) return;
+
+    container.textContent = '';
+
+    const title = document.createElement('h1');
+    title.textContent = project.name;
+    container.appendChild(title);
+
+    displayTasks(project.list);
+    setupListeners();
+}
+
 function displayByStatus() {
     container.textContent = '';
 
