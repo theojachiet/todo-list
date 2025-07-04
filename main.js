@@ -153,7 +153,7 @@ section h1 {
     font-weight: bold;
     font-size: 2.8rem;
     margin-top: 80px;
-    margin-left: 50px;
+    margin-left: 150px;
     margin-bottom: 1em;
 }
 
@@ -191,13 +191,24 @@ section h1 {
     flex: 1;
     display: flex;
     justify-content: end;
-    margin-right: 4rem;
+    margin-right: 5rem;
 }
 
 .line .due-date {
     margin-left: 3.5rem;
     color: green;
-}`, "",{"version":3,"sources":["webpack://./src/styles/section.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA,WAAW;;AAEX;IACI,iBAAiB;IACjB,iBAAiB;IACjB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA,WAAW;;AAEX;IACI,UAAU;IACV,YAAY;IACZ,eAAe;IACf,aAAa;;IAEb,mBAAmB;IACnB,6BAA6B;AACjC;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,OAAO;IACP,aAAa;IACb,mBAAmB;IACnB,QAAQ;AACZ;;AAEA;IACI,OAAO;IACP,aAAa;IACb,oBAAoB;IACpB,kBAAkB;AACtB;;AAEA;IACI,mBAAmB;IACnB,YAAY;AAChB","sourcesContent":["section {\n    flex-grow: 1;\n}\n\n/* TITLE  */\n\nsection h1 {\n    font-weight: bold;\n    font-size: 2.8rem;\n    margin-top: 80px;\n    margin-left: 50px;\n    margin-bottom: 1em;\n}\n\n/* TASKS  */\n\n.line {\n    width: 80%;\n    margin: auto;\n    margin-top: 1em;\n    padding: 15px;\n\n    padding-bottom: 1em;\n    border-bottom: 2px solid #eee;\n}\n\n.line:hover {\n    background-color: #eee;\n    border-radius: 10px;\n}\n\n.line .main {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.line .task {\n    flex: 1;\n    display: flex;\n    align-items: center;\n    gap: 1em;\n}\n\n.line .priority {\n    flex: 1;\n    display: flex;\n    justify-content: end;\n    margin-right: 4rem;\n}\n\n.line .due-date {\n    margin-left: 3.5rem;\n    color: green;\n}"],"sourceRoot":""}]);
+}
+
+/* DELETE ICON  */
+
+.main .invisible {
+    opacity: 0;
+}
+
+.main .delete-task {
+    position: fixed;
+    left: 88.5%;
+}`, "",{"version":3,"sources":["webpack://./src/styles/section.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA,WAAW;;AAEX;IACI,iBAAiB;IACjB,iBAAiB;IACjB,gBAAgB;IAChB,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA,WAAW;;AAEX;IACI,UAAU;IACV,YAAY;IACZ,eAAe;IACf,aAAa;;IAEb,mBAAmB;IACnB,6BAA6B;AACjC;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,OAAO;IACP,aAAa;IACb,mBAAmB;IACnB,QAAQ;AACZ;;AAEA;IACI,OAAO;IACP,aAAa;IACb,oBAAoB;IACpB,kBAAkB;AACtB;;AAEA;IACI,mBAAmB;IACnB,YAAY;AAChB;;AAEA,iBAAiB;;AAEjB;IACI,UAAU;AACd;;AAEA;IACI,eAAe;IACf,WAAW;AACf","sourcesContent":["section {\n    flex-grow: 1;\n}\n\n/* TITLE  */\n\nsection h1 {\n    font-weight: bold;\n    font-size: 2.8rem;\n    margin-top: 80px;\n    margin-left: 150px;\n    margin-bottom: 1em;\n}\n\n/* TASKS  */\n\n.line {\n    width: 80%;\n    margin: auto;\n    margin-top: 1em;\n    padding: 15px;\n\n    padding-bottom: 1em;\n    border-bottom: 2px solid #eee;\n}\n\n.line:hover {\n    background-color: #eee;\n    border-radius: 10px;\n}\n\n.line .main {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.line .task {\n    flex: 1;\n    display: flex;\n    align-items: center;\n    gap: 1em;\n}\n\n.line .priority {\n    flex: 1;\n    display: flex;\n    justify-content: end;\n    margin-right: 5rem;\n}\n\n.line .due-date {\n    margin-left: 3.5rem;\n    color: green;\n}\n\n/* DELETE ICON  */\n\n.main .invisible {\n    opacity: 0;\n}\n\n.main .delete-task {\n    position: fixed;\n    left: 88.5%;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -756,9 +767,44 @@ h6 {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
@@ -915,6 +961,7 @@ class Task {
         this.priority = priority;
         this.project = project; //Maybe could be the [0] in a project array by default ?
         this.status = status;
+        this.id = crypto.randomUUID();
     }
 
     addTask() {
@@ -948,17 +995,104 @@ class Project {
 }
 
 
+;// ./src/images/radiobox-blank.svg
+const radiobox_blank_namespaceObject = __webpack_require__.p + "c998c5eaf91d1df83cdc.svg";
+;// ./src/images/check-circle.svg
+const check_circle_namespaceObject = __webpack_require__.p + "fd1c7a7ea116da71cbcd.svg";
+;// ./src/images/alert-circle-high.svg
+const alert_circle_high_namespaceObject = __webpack_require__.p + "1708dc91ed4c67b7ec2f.svg";
+;// ./src/images/alert-circle-medium.svg
+const alert_circle_medium_namespaceObject = __webpack_require__.p + "1c69105cdde71edf9155.svg";
+;// ./src/images/alert-circle-low.svg
+const alert_circle_low_namespaceObject = __webpack_require__.p + "6331e96bf4c39510ff75.svg";
+;// ./src/images/trash-can.svg
+const trash_can_namespaceObject = __webpack_require__.p + "0cc0920091aefaa3a6ba.svg";
 ;// ./src/DisplayDOM.js
+//Importing Images
+
+
+
+
+
+
+
+
 
 
 const container = document.querySelector('section');
 
 function displayTasks(array) {
-    const line = document.createElement('div');
-    line.classList.add('line');
-
     
-    console.log(array);
+    for (let task of array) {
+        //task container
+        const line = document.createElement('div');
+        line.classList.add('line');
+        line.dataset.id = task.id;
+
+        //Second level containers
+        const main = document.createElement('div');
+        main.classList.add('main');
+        const dueDate = document.createElement('p');
+        dueDate.classList.add('due-date');
+        dueDate.textContent = task.dueDate;
+
+        //third level containers
+        const taskContainer = document.createElement('div');
+        taskContainer.classList.add('task');
+        const priority = document.createElement('div');
+        priority.classList.add('priority');
+
+        //content
+        //Task title and status (+ project)
+        const checkbox = document.createElement('img');
+        checkbox.dataset.id = task.id;
+        if (task.status) {
+            checkbox.src = check_circle_namespaceObject;
+        } else {
+            checkbox.src = radiobox_blank_namespaceObject;
+        }
+        const taskTitle = document.createElement('h2');
+        taskTitle.textContent = task.title;
+        if (task.Project) {
+            const taskProject = document.createElement('p');
+            taskProject.textContent = `( ${task.Project} )`;
+        }
+        
+        //Priority
+        const priorityIcon = document.createElement('img');
+        if (task.priority === 2) {
+            priorityIcon.src = alert_circle_high_namespaceObject;
+        } else if (task.priority === 1) {
+            priorityIcon.src = alert_circle_medium_namespaceObject;
+        } else {
+            priorityIcon.src = alert_circle_low_namespaceObject;
+        }
+
+        // Delete Icon
+        const deleteIcon = document.createElement('img');
+        deleteIcon.classList.add('delete-task');
+        deleteIcon.classList.add('invisible');
+        deleteIcon.src = trash_can_namespaceObject;
+        deleteIcon.dataset.id = task.id;
+
+        //Appending to containers
+        taskContainer.appendChild(checkbox);
+        taskContainer.appendChild(taskTitle);
+        if (task.Project) {
+            taskContainer.appendChild(taskProject);
+        }
+
+        priority.appendChild(priorityIcon);
+
+        main.appendChild(taskContainer);
+        main.appendChild(priority);
+        main.appendChild(deleteIcon);
+
+        line.appendChild(main);
+        line.appendChild(dueDate);
+
+        container.appendChild(line);
+    }
 }
 
 function displayProjects(projects) {
@@ -985,6 +1119,108 @@ function sortByDueDate(array) {
     //Oldest first
     return newArr.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
 }
+;// ./src/EventHandler.js
+//Importing Images
+
+
+
+
+
+
+
+
+
+
+
+const EventHandler_container = document.querySelector('section');
+
+function setupListeners() {
+    //Sorting Buttons
+    const sortByDueDateButton = document.querySelector('.sort-options .due-date');
+    const sortByPriorityButton = document.querySelector('button.priority');
+    const sortByStatusButton = document.querySelector('button.status');
+
+    sortByDueDateButton.addEventListener('click', displayByDate);
+    sortByPriorityButton.addEventListener('click', displayByPriority);
+    sortByStatusButton.addEventListener('click', displayByStatus);
+
+    //Change Status of Task
+    const checkboxButton = [...document.querySelectorAll('.task img')];
+    checkboxButton.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.dataset.id;
+            const task = tasks.find(t => t.id === id);
+            if (!task) return;
+            task.changeStatus();
+            if (task.status) {
+                btn.src = check_circle_namespaceObject;
+            } else {
+                btn.src = radiobox_blank_namespaceObject;
+            }
+        })
+    })
+
+    //Display delete button when hover
+    const lines = [...document.querySelectorAll('.line')];
+
+    lines.forEach(line => line.addEventListener('mouseenter', () => {
+        const deleteButton = line.querySelector('.delete-task');
+        if (!deleteButton) return;
+        deleteButton.classList.remove('invisible');
+
+        //Delete the element
+        deleteButton.addEventListener('click', () => {
+            const id = deleteButton.dataset.id;
+            const index = tasks.findIndex(task => task.id === id);
+            if (index === -1) return;
+            
+            tasks.splice(index, 1);
+            line?.remove();
+        })
+    }));
+    //And remove it when mouse is not over
+    lines.forEach(line => line.addEventListener('mouseleave', () => {
+        const deleteButton = line.querySelector('.delete-task');
+        if (!deleteButton) return;
+        deleteButton.classList.add('invisible');
+    }));
+}
+
+//Sorting Functions
+function displayByStatus() {
+    EventHandler_container.textContent = '';
+
+    const title = document.createElement('h1');
+    EventHandler_container.appendChild(title);
+    title.textContent = 'Sorted By Status';
+
+    displayTasks(sortByStatus(tasks));
+    setupListeners();
+}
+
+function displayByDate() {
+    EventHandler_container.textContent = '';
+
+    const title = document.createElement('h1');
+    EventHandler_container.appendChild(title);
+    title.textContent = 'Sorted By Due Date';
+
+    displayTasks(sortByDueDate(tasks));
+    setupListeners();
+}
+
+function displayByPriority() {
+    EventHandler_container.textContent = '';
+
+    const title = document.createElement('h1');
+    EventHandler_container.appendChild(title);
+    title.textContent = 'Sorted By Priority';
+
+    displayTasks(sortByPriority(tasks));
+    setupListeners();
+}
+
+
 ;// ./src/index.js
 
 
@@ -995,7 +1231,8 @@ function sortByDueDate(array) {
 
 
 
-const test = new Task('test', 'description', '2025-07-18', 0);
+
+const test = new Task('test', 'description', '203-07-18', 0);
 const task2 = new Task('task2', 'another task', '2024-07-18', 1);
 const task3 = new Task('task3', 'another task', '2025-07-19', 0);
 const task4 = new Task('task4', 'another task', '2004-08-23', 2);
@@ -1008,9 +1245,11 @@ task4.addTask();
 task3.changeStatus();
 test.changeStatus();
 
-displayTasks(sortByPriority(tasks));
-displayTasks(sortByStatus(tasks));
-displayTasks(sortByDueDate(tasks));
+setupListeners();
+
+//Trigger sorting on page load to display tasks
+const temp = document.querySelector('.due-date');
+temp.click();
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
