@@ -145,7 +145,59 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `section {
     flex-grow: 1;
-}`, "",{"version":3,"sources":["webpack://./src/styles/section.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB","sourcesContent":["section {\n    flex-grow: 1;\n}"],"sourceRoot":""}]);
+}
+
+/* TITLE  */
+
+section h1 {
+    font-weight: bold;
+    font-size: 2.8rem;
+    margin-top: 80px;
+    margin-left: 50px;
+    margin-bottom: 1em;
+}
+
+/* TASKS  */
+
+.line {
+    width: 80%;
+    margin: auto;
+    margin-top: 1em;
+    padding: 15px;
+
+    padding-bottom: 1em;
+    border-bottom: 2px solid #eee;
+}
+
+.line:hover {
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+.line .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line .task {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.line .priority {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    margin-right: 4rem;
+}
+
+.line .due-date {
+    margin-left: 3.5rem;
+    color: green;
+}`, "",{"version":3,"sources":["webpack://./src/styles/section.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA,WAAW;;AAEX;IACI,iBAAiB;IACjB,iBAAiB;IACjB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA,WAAW;;AAEX;IACI,UAAU;IACV,YAAY;IACZ,eAAe;IACf,aAAa;;IAEb,mBAAmB;IACnB,6BAA6B;AACjC;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,OAAO;IACP,aAAa;IACb,mBAAmB;IACnB,QAAQ;AACZ;;AAEA;IACI,OAAO;IACP,aAAa;IACb,oBAAoB;IACpB,kBAAkB;AACtB;;AAEA;IACI,mBAAmB;IACnB,YAAY;AAChB","sourcesContent":["section {\n    flex-grow: 1;\n}\n\n/* TITLE  */\n\nsection h1 {\n    font-weight: bold;\n    font-size: 2.8rem;\n    margin-top: 80px;\n    margin-left: 50px;\n    margin-bottom: 1em;\n}\n\n/* TASKS  */\n\n.line {\n    width: 80%;\n    margin: auto;\n    margin-top: 1em;\n    padding: 15px;\n\n    padding-bottom: 1em;\n    border-bottom: 2px solid #eee;\n}\n\n.line:hover {\n    background-color: #eee;\n    border-radius: 10px;\n}\n\n.line .main {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.line .task {\n    flex: 1;\n    display: flex;\n    align-items: center;\n    gap: 1em;\n}\n\n.line .priority {\n    flex: 1;\n    display: flex;\n    justify-content: end;\n    margin-right: 4rem;\n}\n\n.line .due-date {\n    margin-left: 3.5rem;\n    color: green;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -851,13 +903,114 @@ var section_update = injectStylesIntoStyleTag_default()(section/* default */.A, 
 
        /* harmony default export */ const styles_section = (section/* default */.A && section/* default */.A.locals ? section/* default */.A.locals : undefined);
 
+;// ./src/task.js
+const tasks = [];
+const projects = (/* unused pure expression or super */ null && ([]));
+
+class Task {
+    constructor(title, description, dueDate, priority, project = 'perso', status = false) {
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.priority = priority;
+        this.project = project; //Maybe could be the [0] in a project array by default ?
+        this.status = status;
+    }
+
+    addTask() {
+        tasks.push(this);
+    }
+
+    changeStatus() {
+        this.status = !this.status;
+    }
+
+    getStatus = () => this.status;
+}
+
+class Project {
+    constructor(name) {
+        this.name = name;
+        this.list = [];
+    }
+
+    addTaskToProject(Task) {
+        list.push(Task);
+    }
+
+    removeTaskFromProject(Task) {
+        if (list.includes(Task)) {
+            list.splice(list.indexOf(Task), 1);
+        } else {
+            console.log('Error : task not in project');
+        }
+    }
+}
+
+
+;// ./src/DisplayDOM.js
+
+
+const container = document.querySelector('section');
+
+function displayTasks(array) {
+    const line = document.createElement('div');
+    line.classList.add('line');
+
+    
+    console.log(array);
+}
+
+function displayProjects(projects) {
+
+}
+;// ./src/sorting.js
+
+
+function sortByPriority(array) {
+    //New Array to keep the original task list intact
+    const newArr = [...array];
+    //Sort with high priority at the top (0 = low, 1 = medium, 2 = high)
+    return newArr.sort((a, b) => b.priority - a.priority);
+}
+
+function sortByStatus(array) {
+    const newArr = [...array];
+    //Sort by status (not done first) and then by due date (oldest first)
+    return newArr.sort((a, b) => a.status - b.status || new Date(a.dueDate) - new Date(b.dueDate));
+}
+
+function sortByDueDate(array) {
+    const newArr = [...array];
+    //Oldest first
+    return newArr.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+}
 ;// ./src/index.js
 
 
 
 
 
-console.log('there');
+
+
+
+
+const test = new Task('test', 'description', '2025-07-18', 0);
+const task2 = new Task('task2', 'another task', '2024-07-18', 1);
+const task3 = new Task('task3', 'another task', '2025-07-19', 0);
+const task4 = new Task('task4', 'another task', '2004-08-23', 2);
+
+test.addTask();
+task2.addTask();
+task3.addTask();
+task4.addTask();
+
+task3.changeStatus();
+test.changeStatus();
+
+displayTasks(sortByPriority(tasks));
+displayTasks(sortByStatus(tasks));
+displayTasks(sortByDueDate(tasks));
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
