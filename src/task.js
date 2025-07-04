@@ -9,6 +9,7 @@ class Task {
         this.priority = priority;
         this.project = project; //Maybe could be the [0] in a project array by default ?
         this.status = status;
+        this.id = crypto.randomUUID();
     }
 
     addTask() {

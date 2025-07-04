@@ -14,6 +14,7 @@ export function displayTasks(array) {
         //task container
         const line = document.createElement('div');
         line.classList.add('line');
+        line.dataset.id = task.id;
 
         //Second level containers
         const main = document.createElement('div');
@@ -31,6 +32,7 @@ export function displayTasks(array) {
         //content
         //Task title and status (+ project)
         const checkbox = document.createElement('img');
+        checkbox.dataset.id = task.id;
         if (task.status) {
             checkbox.src = checkCircle;
         } else {
