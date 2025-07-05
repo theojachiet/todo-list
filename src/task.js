@@ -37,8 +37,8 @@ class Project {
     }
 
     removeTaskFromProject(Task) {
-        if (list.includes(Task)) {
-            list.splice(list.indexOf(Task), 1);
+        if (this.list.includes(Task)) {
+            this.list.splice(this.list.indexOf(Task), 1);
         } else {
             console.log('Error : task not in project');
         }

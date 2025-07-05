@@ -39,6 +39,7 @@ displayProjects(projects);
 
 setupListeners();
 
+
 //Trigger sorting on page load to display tasks
 const temp = document.querySelector('.due-date');
 temp.click();
