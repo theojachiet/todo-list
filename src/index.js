@@ -6,6 +6,7 @@ import './styles/section.css';
 import {Task, Project, tasks, projects} from './task';
 import { displayTasks, displayProjects } from './DisplayDOM';
 import { setupListeners } from './EventHandler';
+import { DialogHandler } from './DialogHandler';
 
 const persoProject = new Project('perso');
 const project1 = new Project('project1');

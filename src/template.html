@@ -46,6 +46,52 @@
         <section>
         </section>
     </div>
+    <dialog class="task-dialog">
+        <h2>Create a Task</h2>
+        <form>
+            <div class="form-container">
+                <label for="task-name">Task Name<input type="text" id="task-name" placeholder="ex : Finish todolist app"
+                        required></label>
+                <label for="task-description">Description <textarea name="description" id="task-description"
+                        placeholder="ex : fixing various bugs and add various features"></textarea></label>
+                <div class="little-inputs">
+                    <label for="due-date">Due Date <input type="date" id="due-date"></label>
+                    <label for="priority">Priority <select name="priorities" id="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select></label>
+                </div>
+                <label for="project-select">Add to Project
+                    <select name="projects" id="project-select">
+                        <option value="perso">Perso</option>
+                    </select>
+                </label>
+            </div>
+            <div class="button-container">
+                <button class="close" value="cancel">Cancel</button>
+                <button class="submit" value="default">Create Task</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog class="project-dialog">
+        <form>
+            <div class="form-container">
+                <label for="book-name">Book Name<input type="text" id="book-name"
+                        placeholder="ex : Echos de la rumeur du monde" required></label>
+                <label for="book-author">Book Author<input type="text" id="book-author"
+                        placeholder="ex : Frannçois Xavier Roussel"></label>
+                <label for="book-pages">Number of Pages<input type="number" id="book-pages" placeholder="ex : 420"
+                        required></label>
+                <label for="book-status" id="check-status">Have you read it yet ?<input type="checkbox"
+                        id="status"></label>
+            </div>
+            <div class="button-container">
+                <button class="close" value="cancel">Cancel</button>
+                <button class="submit" value="default">Submit</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 
 </html>
