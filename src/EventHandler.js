@@ -10,7 +10,7 @@ import { displayTasks, populateTaskInfoDialog } from "./DisplayDOM";
 import { sortByDueDate, sortByPriority, sortByStatus } from "./sorting";
 import { tasks, projects, Task } from "./task";
 import { DialogHandler } from './DialogHandler';
-import { manualReload } from '.';
+import { manualReload, addTaskstoProjects } from '.';
 
 
 const container = document.querySelector('section');
@@ -127,8 +127,16 @@ function setupListeners() {
             //Handle submitting
             const taskInfoSubmitButton = document.querySelector('.task-info-dialog .submit');
             taskInfoSubmitButton.addEventListener('click', (e) => {
+                //Updating priority
                 const inputPriority = document.querySelector('.task-info-dialog #priority').value;
                 targetTask.priority = Number(inputPriority);
+
+                //Updating Project
+                const inputProject = document.querySelector('.task-info-dialog #project-select').value;
+                if (targetTask.project !== inputProject) {
+                    targetTask.project = inputProject;
+                    addTaskstoProjects();
+                }
 
                 e.preventDefault();
                 infoDialog.close();

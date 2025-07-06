@@ -28,6 +28,7 @@ test.changeStatus();
 
 export function addTaskstoProjects() {
     for (let project of projects) {
+        project.list = [];
         for (let task of tasks) {
             if (project.list.includes(task)) continue;
             if (task.project === project.name) {
