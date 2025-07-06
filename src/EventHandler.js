@@ -6,7 +6,7 @@ import priorityMedium from './images/alert-circle-medium.svg';
 import priorityLow from './images/alert-circle-low.svg';
 import deleteIcon from './images/trash-can.svg';
 
-import { displayTasks } from "./DisplayDOM";
+import { displayTasks, populateTaskInfoDialog } from "./DisplayDOM";
 import { sortByDueDate, sortByPriority, sortByStatus } from "./sorting";
 import { tasks, projects, Task } from "./task";
 import { DialogHandler } from './DialogHandler';
@@ -109,6 +109,10 @@ function setupListeners() {
     const taskInfoButton = [...document.querySelectorAll('.line')];
     taskInfoButton.forEach(task => {
         task.addEventListener('click', () => {
+            //Finding the task object corresponding to the task DOM element
+            const DOMTaskid = task.dataset.id;
+            const targetTask = tasks.find(task => DOMTaskid === task.id);
+            populateTaskInfoDialog(targetTask);
             infoDialog.showModal();
         })
     });

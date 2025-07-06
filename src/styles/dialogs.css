@@ -123,3 +123,24 @@ input:focus {
 .submit:hover {
     outline: 4px solid #42b883;
 }
+
+/* TASK INFO DIALOG  */
+
+.task-info-dialog .static-title {
+    margin-bottom: 10px;
+}
+
+.task-info-dialog .static-content {
+    padding: 1em;
+    border-radius: 10px;
+    background-color: #eee;
+    margin-bottom: 15px;
+}
+
+.task-info-dialog .status {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    text-wrap: nowrap;
+}

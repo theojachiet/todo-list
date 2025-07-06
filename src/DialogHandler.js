@@ -17,7 +17,7 @@ const DialogHandler = (function () {
 
     //Task Creation Event Logic
     addTaskButton.addEventListener('click', () => {
-        displayProjectSelect();
+        displayProjectSelect('.task-dialog #project-select');
         taskDialog.showModal();
     });
 
@@ -66,7 +66,8 @@ const DialogHandler = (function () {
     const taskInfoCancelButton = document.querySelector('.task-info-dialog .close');
     const taskInfoSubmitButton = document.querySelector('.task-info-dialog .submit');
 
-    taskInfoCancelButton.addEventListener('click', () => {
+    taskInfoCancelButton.addEventListener('click', (e) => {
+        e.preventDefault();
         taskInfoDialog.close();
     })
 })();

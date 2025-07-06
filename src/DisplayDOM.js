@@ -115,10 +115,54 @@ export function displayProjects(index) {
     }
 }
 
-export function displayProjectSelect() {
-    const projectSelect = document.querySelector('#project-select');
+export function displayProjectSelect(selector) {
+    const projectSelect = document.querySelector(selector);
     for (let i = 0; i < projects.length; i++) {
         if (projectSelect.options[i]) continue;
         projectSelect.options[projectSelect.options.length] = new Option(projects[i].name, projects[i].name);
     }
+}
+
+export function populateTaskInfoDialog(task) {
+    const taskTitle = document.querySelector('.task-info-dialog h2');
+    const taskDescription = document.querySelector('.task-info-dialog .description');
+    const taskDueDate = document.querySelector('.task-info-dialog .due-date');
+
+    const selectPriority = document.querySelector('.task-info-dialog #priority');
+    const currentPriority = task.priority;
+
+    const statusContainer = document.querySelector('.task-info-dialog .status');
+    const statusIcon = document.createElement('img');
+    const currentStatus = task.status;
+
+    //Custom display priority default
+    for (let i, j = 0; i = selectPriority.options[j]; j++) {
+        if (i.value == currentPriority) {
+            selectPriority.selectedIndex = j;
+            break;
+        }
+    }
+
+    //Custom display project
+    displayProjectSelect('.task-info-dialog #project-select');
+    const selectProject = document.querySelector('.task-info-dialog #project-select');
+    const currentProject = task.project;
+
+    for (let i, j = 0; i = selectProject.options[j]; j++) {
+        console.log('here');
+        if (i.value == currentProject) {
+            selectProject.selectedIndex = j;
+            break;
+        }
+    }
+
+    //Custom display status
+    statusContainer.textContent = 'Status : ';
+    currentStatus ? statusIcon.src = checkCircle : statusIcon.src = radioboxBlank;
+    statusContainer.appendChild(statusIcon);
+
+    //Display Static content
+    taskTitle.textContent = task.title;
+    taskDescription.textContent = task.description;
+    taskDueDate.textContent = task.dueDate;
 }

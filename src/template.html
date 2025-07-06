@@ -93,26 +93,25 @@
 
     <!-- TASK DETAILS DIALOG  -->
     <dialog class="task-info-dialog">
-        <h2>Create a Task</h2>
+        <h2></h2>
         <form>
+            <p class="static-title">Description</p>
+            <p class="static-content description"></p>
+            <p class="static-title">Due-Date</p>
+            <p class="static-content due-date"></p>
             <div class="form-container">
-                <label for="task-name">Task Name<input type="text" id="task-name" placeholder="ex : Finish todolist app"
-                        required></label>
-                <label for="task-description">Description <textarea name="description" id="task-description"
-                        placeholder="ex : fixing various bugs and add various features"></textarea></label>
-                <div class="little-inputs">
-                    <label for="due-date">Due Date <input type="date" id="due-date"></label>
-                    <label for="priority">Priority <select name="priorities" id="priority">
-                            <option value="0">Low</option>
-                            <option value="1">Medium</option>
-                            <option value="2">High</option>
-                        </select></label>
-                </div>
-                <label for="project-select">Add to Project
+                <label for="priority">Change Priority <select name="priorities" id="priority">
+                        <option value="0">Low</option>
+                        <option value="1">Medium</option>
+                        <option value="2" selected="selected">High</option>
+                    </select></label>
+                <label for="project-select">Change Project
                     <select name="projects" id="project-select">
                     </select>
                 </label>
+                
             </div>
+            <p class="status"></p>
             <div class="button-container">
                 <button class="close" value="cancel">Cancel</button>
                 <button class="submit" value="default">Save Changes</button>
