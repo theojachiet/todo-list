@@ -94,6 +94,7 @@ function setupListeners() {
             deleteTasksOfProject(targetProject);
             projects.splice(index, 1);
             displayedProject?.remove();
+            manualReload();
         })
     }));
     //And remove it when mouse is not over
