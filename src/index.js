@@ -4,7 +4,7 @@ import './styles/nav.css';
 import './styles/section.css';
 import './styles/dialogs.css';
 
-import {Task, Project, tasks, projects} from './task';
+import { Task, Project, tasks, projects } from './task';
 import { displayTasks, displayProjects } from './DisplayDOM';
 import { setupListeners } from './EventHandler';
 import { DialogHandler } from './DialogHandler';
@@ -26,22 +26,28 @@ const task1project2 = new Task('task1project2', 'another task', '2004-08-23', 2,
 task3.changeStatus();
 test.changeStatus();
 
-function addTaskstoProjects() {
+export function addTaskstoProjects() {
     for (let project of projects) {
         for (let task of tasks) {
+            if (project.list.includes(task)) continue;
             if (task.project === project.name) {
                 project.addTaskToProject(task);
             }
         }
     }
 }
+
 addTaskstoProjects();
 
 displayProjects(projects);
 
 setupListeners();
 
-
 //Trigger sorting on page load to display tasks
-const temp = document.querySelector('.due-date');
-temp.click();
+function manualReload() {
+    const reload = document.querySelector('.due-date');
+    reload.click();
+};
+manualReload();
+
+export {manualReload};
