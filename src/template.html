@@ -46,6 +46,8 @@
         <section>
         </section>
     </div>
+
+    <!-- NEW TASK DIALOG  -->
     <dialog class="task-dialog">
         <h2>Create a Task</h2>
         <form>
@@ -73,6 +75,8 @@
             </div>
         </form>
     </dialog>
+
+    <!-- NEW PROJECT DIALOG  -->
     <dialog class="project-dialog">
         <h2>Create a Project</h2>
         <form>
@@ -83,6 +87,35 @@
             <div class="button-container">
                 <button class="close" value="cancel">Cancel</button>
                 <button class="submit" value="default">Create Project</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- TASK DETAILS DIALOG  -->
+    <dialog class="task-info-dialog">
+        <h2>Create a Task</h2>
+        <form>
+            <div class="form-container">
+                <label for="task-name">Task Name<input type="text" id="task-name" placeholder="ex : Finish todolist app"
+                        required></label>
+                <label for="task-description">Description <textarea name="description" id="task-description"
+                        placeholder="ex : fixing various bugs and add various features"></textarea></label>
+                <div class="little-inputs">
+                    <label for="due-date">Due Date <input type="date" id="due-date"></label>
+                    <label for="priority">Priority <select name="priorities" id="priority">
+                            <option value="0">Low</option>
+                            <option value="1">Medium</option>
+                            <option value="2">High</option>
+                        </select></label>
+                </div>
+                <label for="project-select">Add to Project
+                    <select name="projects" id="project-select">
+                    </select>
+                </label>
+            </div>
+            <div class="button-container">
+                <button class="close" value="cancel">Cancel</button>
+                <button class="submit" value="default">Save Changes</button>
             </div>
         </form>
     </dialog>

@@ -59,7 +59,16 @@ const DialogHandler = (function () {
 
         new Project(inputProjectName);
         displayProjects(projects.length - 1);
-    })    
+    })
+
+    //Task Info Event Logic*
+    const taskInfoDialog = document.querySelector('.task-info-dialog');
+    const taskInfoCancelButton = document.querySelector('.task-info-dialog .close');
+    const taskInfoSubmitButton = document.querySelector('.task-info-dialog .submit');
+
+    taskInfoCancelButton.addEventListener('click', () => {
+        taskInfoDialog.close();
+    })
 })();
 
 export { DialogHandler };

@@ -9,6 +9,7 @@ import deleteIcon from './images/trash-can.svg';
 import { displayTasks } from "./DisplayDOM";
 import { sortByDueDate, sortByPriority, sortByStatus } from "./sorting";
 import { tasks, projects, Task } from "./task";
+import { DialogHandler } from './DialogHandler';
 
 const container = document.querySelector('section');
 
@@ -25,7 +26,8 @@ function setupListeners() {
     //Change Status of Task
     const checkboxButton = [...document.querySelectorAll('.task img')];
     checkboxButton.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             const id = btn.dataset.id;
             const task = tasks.find(t => t.id === id);
             if (!task) return;
@@ -47,7 +49,8 @@ function setupListeners() {
         deleteButton.classList.remove('invisible');
 
         //Delete the element
-        deleteButton.addEventListener('click', () => {
+        deleteButton.addEventListener('click', (e) => {
+            e.stopPropagation();
             const id = deleteButton.dataset.id;
             const targetTask = tasks.find(task => task.id === id);
             if (!targetTask) return;
@@ -100,6 +103,15 @@ function setupListeners() {
 
     //Display specific project
     document.querySelector('.projects-list').addEventListener('click', displayByProject);
+
+    //Create Task info Buttons
+    const infoDialog = document.querySelector('.task-info-dialog');
+    const taskInfoButton = [...document.querySelectorAll('.line')];
+    taskInfoButton.forEach(task => {
+        task.addEventListener('click', () => {
+            infoDialog.showModal();
+        })
+    });
 }
 
 function displayByProject(e) {
@@ -157,7 +169,7 @@ function deleteTasksOfProject(targetProject) {
     for (let i = 0; i < tasks.length; i++) {
         if (tasks[i].project === targetProject.name) {
             tasks.splice(i, 1);
-             i--;
+            i--;
         }
     }
 }
