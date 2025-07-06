@@ -1,5 +1,6 @@
 import { Task, Project, tasks, projects } from './task';
 import { addTaskstoProjects, manualReload } from '.';
+import { displayProjectSelect } from './DisplayDOM';
 
 const navbar = document.querySelector('nav');
 
@@ -12,6 +13,7 @@ const DialogHandler = (function() {
     const createTaskButton = document.querySelector('.submit-task');
 
     addTaskButton.addEventListener('click', () => {
+        displayProjectSelect();
         taskDialog.showModal();
     })
 

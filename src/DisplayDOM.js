@@ -106,3 +106,11 @@ export function displayProjects(array) {
         projectContainer.appendChild(projectItem);
     }
 }
+
+export function displayProjectSelect() {
+    const projectSelect = document.querySelector('#project-select');
+    for (let i = 0; i < projects.length; i++) {
+        if (projectSelect.options[i]) continue;
+        projectSelect.options[projectSelect.options.length] = new Option(projects[i].name, projects[i].name);
+    }
+}
