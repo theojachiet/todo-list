@@ -115,14 +115,6 @@ export function displayProjects(index) {
     }
 }
 
-export function displayProjectSelect(selector) {
-    const projectSelect = document.querySelector(selector);
-    for (let i = 0; i < projects.length; i++) {
-        if (projectSelect.options[i]) continue;
-        projectSelect.options[projectSelect.options.length] = new Option(projects[i].name, projects[i].name);
-    }
-}
-
 export function populateTaskInfoDialog(task) {
     const taskTitle = document.querySelector('.task-info-dialog h2');
     const taskDescription = document.querySelector('.task-info-dialog .description');
@@ -149,7 +141,6 @@ export function populateTaskInfoDialog(task) {
     const currentProject = task.project;
 
     for (let i, j = 0; i = selectProject.options[j]; j++) {
-        console.log('here');
         if (i.value == currentProject) {
             selectProject.selectedIndex = j;
             break;
@@ -165,4 +156,13 @@ export function populateTaskInfoDialog(task) {
     taskTitle.textContent = task.title;
     taskDescription.textContent = task.description;
     taskDueDate.textContent = task.dueDate;
+}
+
+
+export function displayProjectSelect(selector) {
+    const projectSelect = document.querySelector(selector);
+    for (let i = 0; i < projects.length; i++) {
+        if (projectSelect.options[i]) continue;
+        projectSelect.options[projectSelect.options.length] = new Option(projects[i].name, projects[i].name);
+    }
 }

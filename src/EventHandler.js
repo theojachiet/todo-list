@@ -10,6 +10,8 @@ import { displayTasks, populateTaskInfoDialog } from "./DisplayDOM";
 import { sortByDueDate, sortByPriority, sortByStatus } from "./sorting";
 import { tasks, projects, Task } from "./task";
 import { DialogHandler } from './DialogHandler';
+import { manualReload } from '.';
+
 
 const container = document.querySelector('section');
 
@@ -114,6 +116,25 @@ function setupListeners() {
             const targetTask = tasks.find(task => DOMTaskid === task.id);
             populateTaskInfoDialog(targetTask);
             infoDialog.showModal();
+
+            //Handle Changing status
+            const inputCheckbox = document.querySelector('.task-info-dialog .status img');
+            inputCheckbox.addEventListener('click', () => {
+                targetTask.status = !targetTask.status;
+                targetTask.status ? inputCheckbox.src = checkCircle : inputCheckbox.src = radioboxBlank;
+            })
+
+            //Handle submitting
+            const taskInfoSubmitButton = document.querySelector('.task-info-dialog .submit');
+            taskInfoSubmitButton.addEventListener('click', (e) => {
+                const inputPriority = document.querySelector('.task-info-dialog #priority').value;
+                targetTask.priority = Number(inputPriority);
+
+                e.preventDefault();
+                infoDialog.close();
+                manualReload();
+            })
+
         })
     });
 }

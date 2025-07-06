@@ -64,12 +64,11 @@ const DialogHandler = (function () {
     //Task Info Event Logic*
     const taskInfoDialog = document.querySelector('.task-info-dialog');
     const taskInfoCancelButton = document.querySelector('.task-info-dialog .close');
-    const taskInfoSubmitButton = document.querySelector('.task-info-dialog .submit');
 
     taskInfoCancelButton.addEventListener('click', (e) => {
         e.preventDefault();
         taskInfoDialog.close();
-    })
+    });
 })();
 
 export { DialogHandler };
