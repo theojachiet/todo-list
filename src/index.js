@@ -39,7 +39,7 @@ export function addTaskstoProjects() {
 
 addTaskstoProjects();
 
-displayProjects(projects);
+displayProjects(0);
 
 setupListeners();
 

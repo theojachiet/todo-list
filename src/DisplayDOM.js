@@ -87,18 +87,18 @@ export function displayTasks(array) {
     }
 }
 
-export function displayProjects(array) {
-    for(let project of array) {
+export function displayProjects(index) {
+    for(let i = index; i < projects.length; i++) {
         //Creating button container
         const projectItem = document.createElement('button');
         projectItem.classList.add('project-item');
-        projectItem.dataset.id = project.id;
+        projectItem.dataset.id = projects[i].id;
 
         //Filling elements
         const folderImage = document.createElement('img');
         folderImage.src = folderImg;
         const projectName = document.createElement('p');
-        projectName.textContent = project.name;
+        projectName.textContent = projects[i].name;
 
         //Appending
         projectItem.appendChild(folderImage);

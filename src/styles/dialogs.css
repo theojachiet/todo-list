@@ -108,18 +108,18 @@ input:focus {
     border: 2px solid white;
 }
 
-.close-task {
+.close {
     background-color: #999;
 }
 
-.close-task:hover {
+.close:hover {
     outline: 4px solid #999;
 }
 
-.submit-task {
+.submit {
     background-color: #42b883;
 }
 
-.submit-task:hover {
+.submit:hover {
     outline: 4px solid #42b883;
 }
