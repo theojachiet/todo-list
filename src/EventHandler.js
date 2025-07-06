@@ -38,7 +38,7 @@ function setupListeners() {
         })
     })
 
-    //Display delete button when hover
+    //Display delete button when hover on Task
     const lines = [...document.querySelectorAll('.line')];
 
     lines.forEach(line => line.addEventListener('mouseenter', () => {
@@ -51,7 +51,7 @@ function setupListeners() {
             const id = deleteButton.dataset.id;
             const targetTask = tasks.find(task => task.id === id);
             if (!targetTask) return;
-            
+
             const taskProject = projects.find(proj => proj.name === targetTask.project);
             const index = tasks.findIndex(task => task.id === id);
             if (index === -1) return;
@@ -68,9 +68,38 @@ function setupListeners() {
         deleteButton.classList.add('invisible');
     }));
 
+    //Display Delete Button when Hover on Project
+    const displayedProjects = [...document.querySelectorAll('.project-item')];
+
+    displayedProjects.forEach(displayedProject => displayedProject.addEventListener('mouseenter', () => {
+        const deleteButton = displayedProject.querySelector('.delete-project');
+        if (!deleteButton) return;
+        deleteButton.classList.remove('invisible');
+
+        //Delete the element
+        deleteButton.addEventListener('click', () => {
+            const id = deleteButton.dataset.id;
+            const targetProject = projects.find(project => project.id === id);
+            if (!targetProject) return;
+
+            const index = projects.findIndex(project => project.id === id);
+            if (index === -1) return;
+
+            //Delete the tasks from this project
+            deleteTasksOfProject(targetProject);
+            projects.splice(index, 1);
+            displayedProject?.remove();
+        })
+    }));
+    //And remove it when mouse is not over
+    displayedProjects.forEach(displayedProject => displayedProject.addEventListener('mouseleave', () => {
+        const deleteButton = displayedProject.querySelector('.delete-project');
+        if (!deleteButton) return;
+        deleteButton.classList.add('invisible');
+    }));
+
     //Display specific project
     document.querySelector('.projects-list').addEventListener('click', displayByProject);
-
 }
 
 function displayByProject(e) {
@@ -122,6 +151,15 @@ function displayByPriority() {
 
     displayTasks(sortByPriority(tasks));
     setupListeners();
+}
+
+function deleteTasksOfProject(targetProject) {
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].project === targetProject.name) {
+            tasks.splice(i, 1);
+             i--;
+        }
+    }
 }
 
 export { setupListeners };

@@ -88,7 +88,7 @@ export function displayTasks(array) {
 }
 
 export function displayProjects(index) {
-    for(let i = index; i < projects.length; i++) {
+    for (let i = index; i < projects.length; i++) {
         //Creating button container
         const projectItem = document.createElement('button');
         projectItem.classList.add('project-item');
@@ -100,9 +100,17 @@ export function displayProjects(index) {
         const projectName = document.createElement('p');
         projectName.textContent = projects[i].name;
 
+        // Delete Icon
+        const deleteIcon = document.createElement('img');
+        deleteIcon.classList.add('invisible');
+        deleteIcon.classList.add('delete-project');
+        deleteIcon.src = deleteIconImg;
+        deleteIcon.dataset.id = projects[i].id;
+
         //Appending
         projectItem.appendChild(folderImage);
         projectItem.appendChild(projectName);
+        projectItem.appendChild(deleteIcon);
         projectContainer.appendChild(projectItem);
     }
 }

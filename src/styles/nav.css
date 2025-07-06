@@ -119,3 +119,13 @@ nav .projects-list img {
     font-weight: bold;
     color: red;
 }
+
+/* DELETE ICONS */
+
+.delete-project {
+    margin-left: auto;
+}
+
+.project-item .invisible {
+    opacity: 0;
+}
