@@ -2,6 +2,7 @@ import './styles/reset.css';
 import './styles/general-styling.css';
 import './styles/nav.css';
 import './styles/section.css';
+import './styles/dialogs.css';
 
 import {Task, Project, tasks, projects} from './task';
 import { displayTasks, displayProjects } from './DisplayDOM';
