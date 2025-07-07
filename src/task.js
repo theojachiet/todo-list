@@ -11,6 +11,9 @@ class Task {
         this.status = status;
         this.id = crypto.randomUUID();
         tasks.push(this);
+        // const projectObject = projects.find(pro => pro.name === this.project);
+        // projectObject.list.push(this);
+        // saveProjects(projects);
     }
 
     addTask() {
@@ -18,7 +21,14 @@ class Task {
     }
 
     changeStatus() {
+        //Removing and adding back the task to update the project list
+        const projectObject = projects.find(pro => pro.name === this.project);
+        projectObject.removeTaskFromProject(this);
+
         this.status = !this.status;
+
+        projectObject.addTaskToProject(this);
+        saveProjects(projects);
     }
 
     getStatus = () => this.status;

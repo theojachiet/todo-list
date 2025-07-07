@@ -62,6 +62,7 @@ function setupListeners() {
             if (index === -1) return;
 
             taskProject.removeTaskFromProject(targetTask);
+            saveProjects(projects);
             tasks.splice(index, 1);
             line?.remove();
         })

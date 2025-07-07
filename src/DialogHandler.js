@@ -1,6 +1,7 @@
 import { Task, Project } from './task';
 import { addTaskstoProjects, manualReload, tasks, projects } from '.';
 import { displayProjects, displayProjectSelect } from './DisplayDOM';
+import { saveProjects } from './storage';
 
 const DialogHandler = (function () {
     //Create Task buttons
@@ -38,6 +39,7 @@ const DialogHandler = (function () {
 
         new Task(inputTaskName, inputTaskDescription, inputDueDate, Number(inputPriority), inputProject);
         addTaskstoProjects();
+        saveProjects(projects);
         manualReload(); //Reload the display tasks to see the new task
     });
 
