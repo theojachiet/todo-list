@@ -5,25 +5,22 @@ import './styles/section.css';
 import './styles/dialogs.css';
 
 
-import { Task, Project } from './task';
-import { displayTasks, displayProjects } from './DisplayDOM';
+import { Project } from './task';
+import { displayProjects } from './DisplayDOM';
 import { setupListeners } from './EventHandler';
-import { DialogHandler } from './DialogHandler';
+import { DialogHandler } from './DialogHandler'; // Necessary import to initialize the dialogHandler
 import { loadProjects, saveProjects } from './storage';
 
+//Initializing storage arrays
 let projects = [];
 let tasks = [];
 projects = loadProjects();
-
 
 if (projects.length === 0) {
     new Project('Perso', [], crypto.randomUUID());
 }
 
-
-addTaskstoProjects();
-
-
+//General utility function  belongs somewhere else but idk
 export function addTaskstoProjects() {
     for (let project of projects) {
         project.list = [];
@@ -35,7 +32,9 @@ export function addTaskstoProjects() {
         }
     }
 }
+addTaskstoProjects();
 
+//Initial project display
 displayProjects(0);
 
 setupListeners();
@@ -44,7 +43,7 @@ setupListeners();
 function manualReload() {
     const reload = document.querySelector('.due-date');
     reload.click();
-};
+}
 manualReload();
 
 export { manualReload, tasks, projects };

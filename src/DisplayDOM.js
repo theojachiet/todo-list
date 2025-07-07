@@ -7,8 +7,6 @@ import priorityLow from './images/alert-circle-low.svg';
 import deleteIconImg from './images/trash-can.svg';
 import folderImg from './images/folder.svg';
 
-
-import { Task, Project } from './task';
 import { format, compareAsc, formatDistance } from 'date-fns';
 import { projects } from '.';
 

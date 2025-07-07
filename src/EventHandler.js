@@ -1,17 +1,11 @@
 //Importing Images
 import radioboxBlank from './images/radiobox-blank.svg';
 import checkCircle from './images/check-circle.svg';
-import priorityHigh from './images/alert-circle-high.svg';
-import priorityMedium from './images/alert-circle-medium.svg';
-import priorityLow from './images/alert-circle-low.svg';
-import deleteIcon from './images/trash-can.svg';
 
 import { displayTasks, populateTaskInfoDialog } from "./DisplayDOM";
 import { sortByDueDate, sortByPriority, sortByStatus } from "./sorting";
-import { DialogHandler } from './DialogHandler';
-import { manualReload, addTaskstoProjects, tasks, projects } from '.';
+import { manualReload, tasks, projects } from '.';
 import { saveProjects } from './storage';
-
 
 const container = document.querySelector('section');
 
@@ -128,8 +122,9 @@ function setupListeners() {
             })
 
             //Handle submitting
-            const taskInfoSubmitButton = document.querySelector('.task-info-dialog .submit');
-            taskInfoSubmitButton.addEventListener('click', (e) => {
+            const infoTaskForm = document.querySelector('.task-info-dialog form');
+
+            infoTaskForm.addEventListener('submit', (e) => {
                 //Updating priority
                 const inputPriority = document.querySelector('.task-info-dialog #priority').value;
                 targetTask.changePriority(Number(inputPriority));
@@ -154,7 +149,6 @@ function displayByProject(e) {
     if (!btn) return;
 
     const id = btn.dataset.id;
-    console.log(projects)
     const project = projects.find(project => project.id === id);
     if (!project) return;
 

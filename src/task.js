@@ -1,5 +1,5 @@
 import { tasks, projects } from '.';
-import { loadProjects, saveProjects } from './storage';
+import { saveProjects } from './storage';
 
 class Task {
     constructor(title, description, dueDate, priority, project, status = false, id = crypto.randomUUID()) {
@@ -7,7 +7,7 @@ class Task {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.project = project; //Maybe could be the [0] in a project array by default ?
+        this.project = project;
         this.status = status;
         this.id = id;
         tasks.push(this);
@@ -50,8 +50,6 @@ class Task {
         destinationProjectObject.addTaskToProject(this);
         saveProjects(projects);
     }
-
-    getStatus = () => this.status;
 }
 
 class Project {

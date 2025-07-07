@@ -1,4 +1,3 @@
-import { displayProjectSelect } from "./DisplayDOM";
 import { Project, Task } from "./task";
 
 const STORAGE_KEY = 'todo-projects';

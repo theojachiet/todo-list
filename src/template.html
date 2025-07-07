@@ -57,7 +57,7 @@
                 <label for="task-description">Description <textarea name="description" id="task-description"
                         placeholder="ex : fixing various bugs and add various features"></textarea></label>
                 <div class="little-inputs">
-                    <label for="due-date">Due Date <input type="date" id="due-date"></label>
+                    <label for="due-date">Due Date <input type="date" id="due-date" required></label>
                     <label for="priority">Priority <select name="priorities" id="priority">
                             <option value="0">Low</option>
                             <option value="1">Medium</option>
@@ -71,7 +71,7 @@
             </div>
             <div class="button-container">
                 <button class="close" value="cancel">Cancel</button>
-                <button class="submit" value="default">Create Task</button>
+                <button class="create" type="submit">Create Task</button>
             </div>
         </form>
     </dialog>
@@ -86,7 +86,7 @@
             </div>
             <div class="button-container">
                 <button class="close" value="cancel">Cancel</button>
-                <button class="submit" value="default">Create Project</button>
+                <button type="submit" class="create" value="default">Create Project</button>
             </div>
         </form>
     </dialog>
@@ -114,7 +114,7 @@
             <p class="status"></p>
             <div class="button-container">
                 <button class="close" value="cancel">Cancel</button>
-                <button class="submit" value="default">Save Changes</button>
+                <button type="submit" class="create" value="default">Save Changes</button>
             </div>
         </form>
     </dialog>

@@ -116,11 +116,11 @@ input:focus {
     outline: 4px solid #999;
 }
 
-.submit {
+.create {
     background-color: #42b883;
 }
 
-.submit:hover {
+.create:hover {
     outline: 4px solid #42b883;
 }
 

@@ -8,7 +8,9 @@ const DialogHandler = (function () {
     const addTaskButton = document.querySelector('.new-task');
     const taskDialog = document.querySelector('.task-dialog');
     const cancelTaskButton = document.querySelector('.task-dialog .close');
-    const createTaskButton = document.querySelector('.task-dialog .submit');
+    // const createTaskButton = document.querySelector('.task-dialog .submit');
+    const createTaskForm = document.querySelector('.task-dialog form');
+    const createProjectForm = document.querySelector('.project-dialog form');
 
     //Create Project Buttons
     const addProjectButton = document.querySelector('.new-project');
@@ -18,6 +20,7 @@ const DialogHandler = (function () {
 
     //Task Creation Event Logic
     addTaskButton.addEventListener('click', () => {
+        console.log('here');
         displayProjectSelect('.task-dialog #project-select');
         taskDialog.showModal();
     });
@@ -27,21 +30,21 @@ const DialogHandler = (function () {
         taskDialog.close();
     });
 
-    createTaskButton.addEventListener('click', (event) => {
+    createTaskForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        taskDialog.close();
+
+
         const inputTaskName = document.querySelector('#task-name').value;
         const inputTaskDescription = document.querySelector('#task-description').value;
         const inputDueDate = document.querySelector('#due-date').value;
         const inputPriority = document.querySelector('#priority').value;
         const inputProject = document.querySelector('#project-select').value;
 
-        event.preventDefault();
-        taskDialog.close();
 
         new Task(inputTaskName, inputTaskDescription, inputDueDate, Number(inputPriority), inputProject);
         addTaskstoProjects();
         saveProjects(projects);
-        console.log(projects);
-        console.log(localStorage.getItem('todo-projects'));
         manualReload(); //Reload the display tasks to see the new task
     });
 
@@ -55,7 +58,7 @@ const DialogHandler = (function () {
         projectDialog.close();
     });
 
-    createProjectButton.addEventListener('click', (event) => {
+    createProjectForm.addEventListener('submit', (event) => {
         const inputProjectName = document.querySelector('#project-name').value;
 
         event.preventDefault();
@@ -65,7 +68,7 @@ const DialogHandler = (function () {
         displayProjects(projects.length - 1);
     })
 
-    //Task Info Event Logic*
+    //Task Info Event Logic
     const taskInfoDialog = document.querySelector('.task-info-dialog');
     const taskInfoCancelButton = document.querySelector('.task-info-dialog .close');
 
