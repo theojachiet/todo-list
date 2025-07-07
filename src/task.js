@@ -1,9 +1,8 @@
-import { tasks } from '.';
-
-let projects = [];
+import { tasks, projects } from '.';
+import { loadProjects, saveProjects } from './storage';
 
 class Task {
-    constructor(title, description, dueDate, priority, project = 'perso', status = false) {
+    constructor(title, description, dueDate, priority, project, status = false) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
@@ -31,6 +30,7 @@ class Project {
         this.id = crypto.randomUUID();
         this.list = [];
         projects.push(this);
+        saveProjects(projects);
     }
 
     addTaskToProject(Task) {
@@ -46,4 +46,4 @@ class Project {
     }
 }
 
-export {Task, Project, tasks, projects};
+export { Task, Project, tasks, projects };

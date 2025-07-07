@@ -4,13 +4,23 @@ import './styles/nav.css';
 import './styles/section.css';
 import './styles/dialogs.css';
 
-import { Task, Project, projects } from './task';
+
+import { Task, Project } from './task';
 import { displayTasks, displayProjects } from './DisplayDOM';
 import { setupListeners } from './EventHandler';
 import { DialogHandler } from './DialogHandler';
+import { loadProjects, saveProjects } from './storage';
 
-const persoProject = new Project('perso');
+let projects = [];
+
 let tasks = [];
+projects = loadProjects();
+console.log(projects.length);
+
+
+if (projects.length === 0) {
+    new Project('Perso');
+}
 // const project1 = new Project('project1');
 // const project2 = new Project('project2');
 
@@ -27,14 +37,16 @@ let tasks = [];
 // task3.changeStatus();
 // test.changeStatus();
 
-//Get localStorage
-if (!localStorage.getItem('tasks')) {
-    console.log('nothing in local storage');
-} else {
-    tasks = JSON.parse(localStorage.getItem('tasks'));
-}
+//Populate arrays with localStorage
+// if (!localStorage.getItem('tasks')) {
+//     console.log('nothing in local storage');
+// } else {
+//     tasks = JSON.parse(localStorage.getItem('tasks'));
+// }
 
-console.log(tasks);
+
+addTaskstoProjects();
+
 
 export function addTaskstoProjects() {
     for (let project of projects) {
@@ -48,7 +60,7 @@ export function addTaskstoProjects() {
     }
 }
 
-addTaskstoProjects();
+
 
 displayProjects(0);
 
@@ -61,4 +73,4 @@ function manualReload() {
 };
 manualReload();
 
-export { manualReload, tasks };
+export { manualReload, tasks, projects };

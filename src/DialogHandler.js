@@ -1,5 +1,5 @@
-import { Task, Project, tasks, projects } from './task';
-import { addTaskstoProjects, manualReload } from '.';
+import { Task, Project } from './task';
+import { addTaskstoProjects, manualReload, tasks, projects } from '.';
 import { displayProjects, displayProjectSelect } from './DisplayDOM';
 
 const DialogHandler = (function () {
@@ -38,7 +38,6 @@ const DialogHandler = (function () {
 
         new Task(inputTaskName, inputTaskDescription, inputDueDate, Number(inputPriority), inputProject);
         addTaskstoProjects();
-        localStorage.setItem('tasks', JSON.stringify(tasks));
         manualReload(); //Reload the display tasks to see the new task
     });
 

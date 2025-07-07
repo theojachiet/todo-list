@@ -8,9 +8,9 @@ import deleteIcon from './images/trash-can.svg';
 
 import { displayTasks, populateTaskInfoDialog } from "./DisplayDOM";
 import { sortByDueDate, sortByPriority, sortByStatus } from "./sorting";
-import { tasks, projects, Task } from "./task";
 import { DialogHandler } from './DialogHandler';
-import { manualReload, addTaskstoProjects } from '.';
+import { manualReload, addTaskstoProjects, tasks, projects } from '.';
+import { saveProjects } from './storage';
 
 
 const container = document.querySelector('section');
@@ -64,7 +64,6 @@ function setupListeners() {
             taskProject.removeTaskFromProject(targetTask);
             tasks.splice(index, 1);
             line?.remove();
-            localStorage.setItem('tasks', JSON.stringify(tasks));
         })
     }));
     //And remove it when mouse is not over
@@ -94,6 +93,7 @@ function setupListeners() {
             //Delete the tasks from this project
             deleteTasksOfProject(targetProject);
             projects.splice(index, 1);
+            saveProjects(projects);
             displayedProject?.remove();
             manualReload();
         })

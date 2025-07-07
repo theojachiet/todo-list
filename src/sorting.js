@@ -1,5 +1,3 @@
-import { Task, Project, tasks, projects } from './task';
-
 export function sortByPriority(array) {
     //New Array to keep the original task list intact
     const newArr = [...array];
