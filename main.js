@@ -241,11 +241,11 @@ input:focus {
     outline: 4px solid #999;
 }
 
-.submit {
+.create {
     background-color: #42b883;
 }
 
-.submit:hover {
+.create:hover {
     outline: 4px solid #42b883;
 }
 
@@ -268,7 +268,7 @@ input:focus {
     align-items: center;
     gap: 1em;
     text-wrap: nowrap;
-}`, "",{"version":3,"sources":["webpack://./src/styles/dialogs.css"],"names":[],"mappings":"AAAA,YAAY;;AAEZ;IACI,WAAW;IACX,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;IACnB,iBAAiB;IACjB,kCAAkC;IAClC,+BAA+B;AACnC;;AAEA;IACI,6BAA6B;AACjC;;AAEA;IACI,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA,SAAS;AACT;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,eAAe;IACf,aAAa;IACb,8BAA8B;IAC9B,QAAQ;AACZ;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,qBAAqB;IACrB,QAAQ;AACZ;;AAEA;IACI,gBAAgB;IAChB,sBAAsB;IACtB,kBAAkB;IAClB,cAAc;IACd,WAAW;IACX,WAAW;IACX,sBAAsB;IACtB,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,gBAAgB;IAChB,sBAAsB;IACtB,kBAAkB;IAClB,aAAa;IACb,WAAW;IACX,WAAW;IACX,sBAAsB;IACtB,iBAAiB;AACrB;;AAEA;IACI,sBAAsB;IACtB,kBAAkB;IAClB,cAAc;IACd,WAAW;IACX,WAAW;IACX,sBAAsB;IACtB,iBAAiB;AACrB;;AAEA;IACI,wBAAwB;AAC5B;;AAEA;IACI,wBAAwB;IACxB,2CAA2C;AAC/C;;AAEA;IACI,kBAAkB;AACtB;;CAEC;IACG,kBAAkB;IAClB,gBAAgB;IAChB,kBAAkB;IAClB,mBAAmB;IACnB,iBAAiB;IACjB,uBAAuB;AAC3B;;AAEA;IACI,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,0BAA0B;AAC9B;;AAEA,sBAAsB;;AAEtB;IACI,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,mBAAmB;IACnB,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,aAAa;IACb,mBAAmB;IACnB,QAAQ;IACR,iBAAiB;AACrB","sourcesContent":["/* DIALOG  */\n\ndialog {\n    color: #333;\n    margin: auto;\n    border: none;\n    padding: 30px 50px;\n    border-radius: 20px;\n    font-size: 1.1rem;\n    background-color: rgb(251,249,247);\n    width: clamp(500px, 500px, 50%);\n}\n\n::backdrop {\n    backdrop-filter: blur(0.2rem);\n}\n\ndialog h2 {\n    text-align: center;\n    margin-bottom: 1em;\n}\n\n/* FORM */\n.form-container {\n    display: flex;\n    flex-direction: column;\n    gap: 30px;\n    align-items: center;\n}\n\n.form-container label {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\n.button-container {\n    margin-top: 2em;\n    display: flex;\n    justify-content: space-between;\n    gap: 2em;\n}\n\n.little-inputs label {\n    display: block;\n}\n\n.little-inputs {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    gap: 2em;\n}\n\ninput {\n    appearance: none;\n    border: 1px solid #555;\n    border-radius: 5px;\n    height: 2.5rem;\n    width: 100%;\n    color: #333;\n    background-color: #ddd;\n    padding-left: 1em;\n}\n\ntextarea {\n    resize: none;\n    appearance: none;\n    border: 1px solid #555;\n    border-radius: 5px;\n    height: 10rem;\n    width: 100%;\n    color: #333;\n    background-color: #ddd;\n    padding-left: 1em;\n}\n\nselect {\n    border: 1px solid #555;\n    border-radius: 5px;\n    height: 2.5rem;\n    width: 100%;\n    color: #333;\n    background-color: #ddd;\n    padding-left: 1em;\n}\n\ninput:hover {\n    outline: 2px solid white;\n}\n\ninput:focus {\n    outline: 2px solid white;\n    box-shadow: 0px 0px 15px var(--first-color);\n}\n\n#check-status {\n    text-align: center;\n}\n\n dialog button {\n    text-align: center;\n    appearance: none;\n    padding: 0.7em 2em;\n    border-radius: 10px;\n    color: whitesmoke;\n    border: 2px solid white;\n}\n\n.close {\n    background-color: #999;\n}\n\n.close:hover {\n    outline: 4px solid #999;\n}\n\n.submit {\n    background-color: #42b883;\n}\n\n.submit:hover {\n    outline: 4px solid #42b883;\n}\n\n/* TASK INFO DIALOG  */\n\n.task-info-dialog .static-title {\n    margin-bottom: 10px;\n}\n\n.task-info-dialog .static-content {\n    padding: 1em;\n    border-radius: 10px;\n    background-color: #eee;\n    margin-bottom: 15px;\n}\n\n.task-info-dialog .status {\n    margin-top: 1em;\n    display: flex;\n    align-items: center;\n    gap: 1em;\n    text-wrap: nowrap;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/dialogs.css"],"names":[],"mappings":"AAAA,YAAY;;AAEZ;IACI,WAAW;IACX,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;IACnB,iBAAiB;IACjB,kCAAkC;IAClC,+BAA+B;AACnC;;AAEA;IACI,6BAA6B;AACjC;;AAEA;IACI,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA,SAAS;AACT;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,eAAe;IACf,aAAa;IACb,8BAA8B;IAC9B,QAAQ;AACZ;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,qBAAqB;IACrB,QAAQ;AACZ;;AAEA;IACI,gBAAgB;IAChB,sBAAsB;IACtB,kBAAkB;IAClB,cAAc;IACd,WAAW;IACX,WAAW;IACX,sBAAsB;IACtB,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,gBAAgB;IAChB,sBAAsB;IACtB,kBAAkB;IAClB,aAAa;IACb,WAAW;IACX,WAAW;IACX,sBAAsB;IACtB,iBAAiB;AACrB;;AAEA;IACI,sBAAsB;IACtB,kBAAkB;IAClB,cAAc;IACd,WAAW;IACX,WAAW;IACX,sBAAsB;IACtB,iBAAiB;AACrB;;AAEA;IACI,wBAAwB;AAC5B;;AAEA;IACI,wBAAwB;IACxB,2CAA2C;AAC/C;;AAEA;IACI,kBAAkB;AACtB;;CAEC;IACG,kBAAkB;IAClB,gBAAgB;IAChB,kBAAkB;IAClB,mBAAmB;IACnB,iBAAiB;IACjB,uBAAuB;AAC3B;;AAEA;IACI,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,0BAA0B;AAC9B;;AAEA,sBAAsB;;AAEtB;IACI,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,mBAAmB;IACnB,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,aAAa;IACb,mBAAmB;IACnB,QAAQ;IACR,iBAAiB;AACrB","sourcesContent":["/* DIALOG  */\n\ndialog {\n    color: #333;\n    margin: auto;\n    border: none;\n    padding: 30px 50px;\n    border-radius: 20px;\n    font-size: 1.1rem;\n    background-color: rgb(251,249,247);\n    width: clamp(500px, 500px, 50%);\n}\n\n::backdrop {\n    backdrop-filter: blur(0.2rem);\n}\n\ndialog h2 {\n    text-align: center;\n    margin-bottom: 1em;\n}\n\n/* FORM */\n.form-container {\n    display: flex;\n    flex-direction: column;\n    gap: 30px;\n    align-items: center;\n}\n\n.form-container label {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\n.button-container {\n    margin-top: 2em;\n    display: flex;\n    justify-content: space-between;\n    gap: 2em;\n}\n\n.little-inputs label {\n    display: block;\n}\n\n.little-inputs {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    gap: 2em;\n}\n\ninput {\n    appearance: none;\n    border: 1px solid #555;\n    border-radius: 5px;\n    height: 2.5rem;\n    width: 100%;\n    color: #333;\n    background-color: #ddd;\n    padding-left: 1em;\n}\n\ntextarea {\n    resize: none;\n    appearance: none;\n    border: 1px solid #555;\n    border-radius: 5px;\n    height: 10rem;\n    width: 100%;\n    color: #333;\n    background-color: #ddd;\n    padding-left: 1em;\n}\n\nselect {\n    border: 1px solid #555;\n    border-radius: 5px;\n    height: 2.5rem;\n    width: 100%;\n    color: #333;\n    background-color: #ddd;\n    padding-left: 1em;\n}\n\ninput:hover {\n    outline: 2px solid white;\n}\n\ninput:focus {\n    outline: 2px solid white;\n    box-shadow: 0px 0px 15px var(--first-color);\n}\n\n#check-status {\n    text-align: center;\n}\n\n dialog button {\n    text-align: center;\n    appearance: none;\n    padding: 0.7em 2em;\n    border-radius: 10px;\n    color: whitesmoke;\n    border: 2px solid white;\n}\n\n.close {\n    background-color: #999;\n}\n\n.close:hover {\n    outline: 4px solid #999;\n}\n\n.create {\n    background-color: #42b883;\n}\n\n.create:hover {\n    outline: 4px solid #42b883;\n}\n\n/* TASK INFO DIALOG  */\n\n.task-info-dialog .static-title {\n    margin-bottom: 10px;\n}\n\n.task-info-dialog .static-content {\n    padding: 1em;\n    border-radius: 10px;\n    background-color: #eee;\n    margin-bottom: 15px;\n}\n\n.task-info-dialog .status {\n    margin-top: 1em;\n    display: flex;\n    align-items: center;\n    gap: 1em;\n    text-wrap: nowrap;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1187,6 +1187,105 @@ var dialogs_update = injectStylesIntoStyleTag_default()(dialogs/* default */.A, 
 
 
        /* harmony default export */ const styles_dialogs = (dialogs/* default */.A && dialogs/* default */.A.locals ? dialogs/* default */.A.locals : undefined);
+
+;// ./src/storage.js
+
+
+const STORAGE_KEY = 'todo-projects';
+
+function saveProjects(projectsArray) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(projectsArray));
+}
+
+function loadProjects() {
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (!data) return [];
+
+    const parsed = JSON.parse(data);
+    return parsed.map(project => restoreProject(project));
+}
+
+function restoreProject(obj) {
+    const restoredTasks = obj.list.map(task => new Task(task.title, task.description, task.dueDate, task.priority, task.project, task.status));
+    return new Project(obj.name, restoredTasks, obj.id);
+}
+;// ./src/task.js
+
+
+
+class Task {
+    constructor(title, description, dueDate, priority, project, status = false, id = crypto.randomUUID()) {
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.priority = priority;
+        this.project = project;
+        this.status = status;
+        this.id = id;
+        tasks.push(this);
+    }
+
+    addTask() {
+        tasks.push(this);
+    }
+
+    changeStatus() {
+        //Removing and adding back the task to update the project list
+        const projectObject = projects.find(pro => pro.name === this.project);
+        projectObject.removeTaskFromProject(this);
+
+        this.status = !this.status;
+
+        projectObject.addTaskToProject(this);
+        saveProjects(projects);
+    }
+
+    changePriority(inputPriority) {
+        //Removing and adding back the task to update the project list
+        const projectObject = projects.find(pro => pro.name === this.project);
+        projectObject.removeTaskFromProject(this);
+
+        this.priority = inputPriority;
+
+        projectObject.addTaskToProject(this);
+        saveProjects(projects);
+    }
+
+    changeProject(inputProject) {
+        //Removing and changing destination project to modify lists for both
+        const initialProjectObject = projects.find(pro => pro.name === this.project);
+        const destinationProjectObject = projects.find(pro => pro.name === inputProject);
+        initialProjectObject.removeTaskFromProject(this);
+
+        this.project = inputProject;
+
+        destinationProjectObject.addTaskToProject(this);
+        saveProjects(projects);
+    }
+}
+
+class Project {
+    constructor(name, list, id = crypto.randomUUID()) {
+        this.name = name;
+        this.list = list;
+        this.id = id;
+        projects.push(this);
+        saveProjects(projects);
+    }
+
+    addTaskToProject(Task) {
+        this.list.push(Task);
+    }
+
+    removeTaskFromProject(Task) {
+        if (this.list.includes(Task)) {
+            this.list.splice(this.list.indexOf(Task), 1);
+        } else {
+            console.log('Error : task not in project');
+        }
+    }
+}
+
 
 ;// ./src/images/radiobox-blank.svg
 const radiobox_blank_namespaceObject = __webpack_require__.p + "c998c5eaf91d1df83cdc.svg";
@@ -4906,8 +5005,6 @@ function formatDistance_formatDistance(laterDate, earlierDate, options) {
 
 
 
-
-
 const container = document.querySelector('section');
 const projectContainer = document.querySelector('.projects-list');
 
@@ -5077,108 +5174,6 @@ function displayProjectSelect(selector) {
         projectSelect.options[projectSelect.options.length] = new Option(projects[i].name, projects[i].name);
     }
 }
-;// ./src/storage.js
-
-
-
-const STORAGE_KEY = 'todo-projects';
-
-function saveProjects(projectsArray) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(projectsArray));
-}
-
-function loadProjects() {
-    const data = localStorage.getItem(STORAGE_KEY);
-    if (!data) return [];
-
-    const parsed = JSON.parse(data);
-    return parsed.map(project => restoreProject(project));
-}
-
-function restoreProject(obj) {
-    const restoredTasks = obj.list.map(task => new Task(task.title, task.description, task.dueDate, task.priority, task.project, task.status));
-    return new Project(obj.name, restoredTasks, obj.id);
-}
-;// ./src/task.js
-
-
-
-class Task {
-    constructor(title, description, dueDate, priority, project, status = false, id = crypto.randomUUID()) {
-        this.title = title;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
-        this.project = project; //Maybe could be the [0] in a project array by default ?
-        this.status = status;
-        this.id = id;
-        tasks.push(this);
-    }
-
-    addTask() {
-        tasks.push(this);
-    }
-
-    changeStatus() {
-        //Removing and adding back the task to update the project list
-        const projectObject = projects.find(pro => pro.name === this.project);
-        projectObject.removeTaskFromProject(this);
-
-        this.status = !this.status;
-
-        projectObject.addTaskToProject(this);
-        saveProjects(projects);
-    }
-
-    changePriority(inputPriority) {
-        //Removing and adding back the task to update the project list
-        const projectObject = projects.find(pro => pro.name === this.project);
-        projectObject.removeTaskFromProject(this);
-
-        this.priority = inputPriority;
-
-        projectObject.addTaskToProject(this);
-        saveProjects(projects);
-    }
-
-    changeProject(inputProject) {
-        //Removing and changing destination project to modify lists for both
-        const initialProjectObject = projects.find(pro => pro.name === this.project);
-        const destinationProjectObject = projects.find(pro => pro.name === inputProject);
-        initialProjectObject.removeTaskFromProject(this);
-
-        this.project = inputProject;
-
-        destinationProjectObject.addTaskToProject(this);
-        saveProjects(projects);
-    }
-
-    getStatus = () => this.status;
-}
-
-class Project {
-    constructor(name, list, id = crypto.randomUUID()) {
-        this.name = name;
-        this.list = list;
-        this.id = id;
-        projects.push(this);
-        saveProjects(projects);
-    }
-
-    addTaskToProject(Task) {
-        this.list.push(Task);
-    }
-
-    removeTaskFromProject(Task) {
-        if (this.list.includes(Task)) {
-            this.list.splice(this.list.indexOf(Task), 1);
-        } else {
-            console.log('Error : task not in project');
-        }
-    }
-}
-
-
 ;// ./src/sorting.js
 function sortByPriority(array) {
     //New Array to keep the original task list intact
@@ -5198,93 +5193,8 @@ function sortByDueDate(array) {
     //Oldest first
     return newArr.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
 }
-;// ./src/DialogHandler.js
-
-
-
-
-
-const DialogHandler = (function () {
-    //Create Task buttons
-    const addTaskButton = document.querySelector('.new-task');
-    const taskDialog = document.querySelector('.task-dialog');
-    const cancelTaskButton = document.querySelector('.task-dialog .close');
-    const createTaskButton = document.querySelector('.task-dialog .submit');
-
-    //Create Project Buttons
-    const addProjectButton = document.querySelector('.new-project');
-    const projectDialog = document.querySelector('.project-dialog');
-    const cancelProjectButton = document.querySelector('.project-dialog .close');
-    const createProjectButton = document.querySelector('.project-dialog .submit');
-
-    //Task Creation Event Logic
-    addTaskButton.addEventListener('click', () => {
-        displayProjectSelect('.task-dialog #project-select');
-        taskDialog.showModal();
-    });
-
-    cancelTaskButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        taskDialog.close();
-    });
-
-    createTaskButton.addEventListener('click', (event) => {
-        const inputTaskName = document.querySelector('#task-name').value;
-        const inputTaskDescription = document.querySelector('#task-description').value;
-        const inputDueDate = document.querySelector('#due-date').value;
-        const inputPriority = document.querySelector('#priority').value;
-        const inputProject = document.querySelector('#project-select').value;
-
-        event.preventDefault();
-        taskDialog.close();
-
-        new Task(inputTaskName, inputTaskDescription, inputDueDate, Number(inputPriority), inputProject);
-        addTaskstoProjects();
-        saveProjects(projects);
-        console.log(projects);
-        console.log(localStorage.getItem('todo-projects'));
-        manualReload(); //Reload the display tasks to see the new task
-    });
-
-    //Project Creation Event Logic
-    addProjectButton.addEventListener('click', () => {
-        projectDialog.showModal();
-    });
-
-    cancelProjectButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        projectDialog.close();
-    });
-
-    createProjectButton.addEventListener('click', (event) => {
-        const inputProjectName = document.querySelector('#project-name').value;
-
-        event.preventDefault();
-        projectDialog.close();
-
-        new Project(inputProjectName, []);
-        displayProjects(projects.length - 1);
-    })
-
-    //Task Info Event Logic*
-    const taskInfoDialog = document.querySelector('.task-info-dialog');
-    const taskInfoCancelButton = document.querySelector('.task-info-dialog .close');
-
-    taskInfoCancelButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        taskInfoDialog.close();
-    });
-})();
-
-
 ;// ./src/EventHandler.js
 //Importing Images
-
-
-
-
-
-
 
 
 
@@ -5408,8 +5318,9 @@ function setupListeners() {
             })
 
             //Handle submitting
-            const taskInfoSubmitButton = document.querySelector('.task-info-dialog .submit');
-            taskInfoSubmitButton.addEventListener('click', (e) => {
+            const infoTaskForm = document.querySelector('.task-info-dialog form');
+
+            infoTaskForm.addEventListener('submit', (e) => {
                 //Updating priority
                 const inputPriority = document.querySelector('.task-info-dialog #priority').value;
                 targetTask.changePriority(Number(inputPriority));
@@ -5434,7 +5345,6 @@ function displayByProject(e) {
     if (!btn) return;
 
     const id = btn.dataset.id;
-    console.log(projects)
     const project = projects.find(project => project.id === id);
     if (!project) return;
 
@@ -5491,6 +5401,88 @@ function deleteTasksOfProject(targetProject) {
 }
 
 
+;// ./src/DialogHandler.js
+
+
+
+
+
+const DialogHandler = (function () {
+    //Create Task buttons
+    const addTaskButton = document.querySelector('.new-task');
+    const taskDialog = document.querySelector('.task-dialog');
+    const cancelTaskButton = document.querySelector('.task-dialog .close');
+    // const createTaskButton = document.querySelector('.task-dialog .submit');
+    const createTaskForm = document.querySelector('.task-dialog form');
+    const createProjectForm = document.querySelector('.project-dialog form');
+
+    //Create Project Buttons
+    const addProjectButton = document.querySelector('.new-project');
+    const projectDialog = document.querySelector('.project-dialog');
+    const cancelProjectButton = document.querySelector('.project-dialog .close');
+    const createProjectButton = document.querySelector('.project-dialog .submit');
+
+    //Task Creation Event Logic
+    addTaskButton.addEventListener('click', () => {
+        console.log('here');
+        displayProjectSelect('.task-dialog #project-select');
+        taskDialog.showModal();
+    });
+
+    cancelTaskButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        taskDialog.close();
+    });
+
+    createTaskForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        taskDialog.close();
+
+
+        const inputTaskName = document.querySelector('#task-name').value;
+        const inputTaskDescription = document.querySelector('#task-description').value;
+        const inputDueDate = document.querySelector('#due-date').value;
+        const inputPriority = document.querySelector('#priority').value;
+        const inputProject = document.querySelector('#project-select').value;
+
+
+        new Task(inputTaskName, inputTaskDescription, inputDueDate, Number(inputPriority), inputProject);
+        addTaskstoProjects();
+        saveProjects(projects);
+        manualReload(); //Reload the display tasks to see the new task
+    });
+
+    //Project Creation Event Logic
+    addProjectButton.addEventListener('click', () => {
+        projectDialog.showModal();
+    });
+
+    cancelProjectButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        projectDialog.close();
+    });
+
+    createProjectForm.addEventListener('submit', (event) => {
+        const inputProjectName = document.querySelector('#project-name').value;
+
+        event.preventDefault();
+        projectDialog.close();
+
+        new Project(inputProjectName, []);
+        displayProjects(projects.length - 1);
+    })
+
+    //Task Info Event Logic
+    const taskInfoDialog = document.querySelector('.task-info-dialog');
+    const taskInfoCancelButton = document.querySelector('.task-info-dialog .close');
+
+    taskInfoCancelButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        taskInfoDialog.close();
+    });
+})();
+
+
 ;// ./src/index.js
 
 
@@ -5502,22 +5494,19 @@ function deleteTasksOfProject(targetProject) {
 
 
 
+ // Necessary import to initialize the dialogHandler
 
 
-
+//Initializing storage arrays
 let projects = [];
 let tasks = [];
 projects = loadProjects();
-
 
 if (projects.length === 0) {
     new Project('Perso', [], crypto.randomUUID());
 }
 
-
-addTaskstoProjects();
-
-
+//General utility function  belongs somewhere else but idk
 function addTaskstoProjects() {
     for (let project of projects) {
         project.list = [];
@@ -5529,7 +5518,9 @@ function addTaskstoProjects() {
         }
     }
 }
+addTaskstoProjects();
 
+//Initial project display
 displayProjects(0);
 
 setupListeners();
@@ -5538,7 +5529,7 @@ setupListeners();
 function manualReload() {
     const reload = document.querySelector('.due-date');
     reload.click();
-};
+}
 manualReload();
 
 
