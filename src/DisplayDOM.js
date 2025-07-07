@@ -9,6 +9,7 @@ import folderImg from './images/folder.svg';
 
 
 import { Task, Project, tasks, projects } from './task';
+import { format, compareAsc, formatDistance } from 'date-fns';
 
 const container = document.querySelector('section');
 const projectContainer = document.querySelector('.projects-list');
@@ -26,7 +27,9 @@ export function displayTasks(array) {
         main.classList.add('main');
         const dueDate = document.createElement('p');
         dueDate.classList.add('due-date');
-        dueDate.textContent = task.dueDate;
+        dueDate.textContent = 'Due-date : ' + format(task.dueDate, 'do MMMM yyyy');
+        const comparator = compareAsc(task.dueDate, new Date());
+        if (comparator < 0) dueDate.style.color = 'orangered';
 
         //third level containers
         const taskContainer = document.createElement('div');
@@ -155,7 +158,18 @@ export function populateTaskInfoDialog(task) {
     //Display Static content
     taskTitle.textContent = task.title;
     taskDescription.textContent = task.description;
-    taskDueDate.textContent = task.dueDate;
+    taskDueDate.textContent = format(task.dueDate, 'do MMMM yyyy');
+    const distance = document.createElement('p');
+    const comparator = compareAsc(task.dueDate, new Date());
+    if (comparator < 0) {
+        taskDueDate.style.color = 'orangered';
+        distance.textContent = formatDistance(task.dueDate, new Date()) + ' ago';
+    } else {
+        taskDueDate.style.color = 'green';
+        distance.textContent = 'In ' + formatDistance(task.dueDate, new Date());
+    }
+    distance.style.color = '#333';
+    taskDueDate.appendChild(distance);
 }
 
 
