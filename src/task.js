@@ -1,5 +1,6 @@
-const tasks = [];
-const projects = [];
+import { tasks } from '.';
+
+let projects = [];
 
 class Task {
     constructor(title, description, dueDate, priority, project = 'perso', status = false) {

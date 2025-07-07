@@ -64,6 +64,7 @@ function setupListeners() {
             taskProject.removeTaskFromProject(targetTask);
             tasks.splice(index, 1);
             line?.remove();
+            localStorage.setItem('tasks', JSON.stringify(tasks));
         })
     }));
     //And remove it when mouse is not over

@@ -38,6 +38,7 @@ const DialogHandler = (function () {
 
         new Task(inputTaskName, inputTaskDescription, inputDueDate, Number(inputPriority), inputProject);
         addTaskstoProjects();
+        localStorage.setItem('tasks', JSON.stringify(tasks));
         manualReload(); //Reload the display tasks to see the new task
     });
 
