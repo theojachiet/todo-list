@@ -1,3 +1,4 @@
+import { displayProjectSelect } from "./DisplayDOM";
 import { Project, Task } from "./task";
 
 const STORAGE_KEY = 'todo-projects';
@@ -11,14 +12,10 @@ export function loadProjects() {
     if (!data) return [];
 
     const parsed = JSON.parse(data);
-    console.log(data);
     return parsed.map(project => restoreProject(project));
 }
 
 function restoreProject(obj) {
     const restoredTasks = obj.list.map(task => new Task(task.title, task.description, task.dueDate, task.priority, task.project, task.status));
-    const restoredProject = new Project(obj.name);
-    restoreProject.id = obj.id;
-    restoreProject.list = restoredTasks;
-    return restoredProject;
+    return new Project(obj.name, restoredTasks, obj.id);
 }

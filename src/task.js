@@ -2,18 +2,15 @@ import { tasks, projects } from '.';
 import { loadProjects, saveProjects } from './storage';
 
 class Task {
-    constructor(title, description, dueDate, priority, project, status = false) {
+    constructor(title, description, dueDate, priority, project, status = false, id = crypto.randomUUID()) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
         this.project = project; //Maybe could be the [0] in a project array by default ?
         this.status = status;
-        this.id = crypto.randomUUID();
+        this.id = id;
         tasks.push(this);
-        // const projectObject = projects.find(pro => pro.name === this.project);
-        // projectObject.list.push(this);
-        // saveProjects(projects);
     }
 
     addTask() {
@@ -58,10 +55,10 @@ class Task {
 }
 
 class Project {
-    constructor(name) {
+    constructor(name, list, id = crypto.randomUUID()) {
         this.name = name;
-        this.id = crypto.randomUUID();
-        this.list = [];
+        this.list = list;
+        this.id = id;
         projects.push(this);
         saveProjects(projects);
     }

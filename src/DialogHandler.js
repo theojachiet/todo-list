@@ -40,6 +40,8 @@ const DialogHandler = (function () {
         new Task(inputTaskName, inputTaskDescription, inputDueDate, Number(inputPriority), inputProject);
         addTaskstoProjects();
         saveProjects(projects);
+        console.log(projects);
+        console.log(localStorage.getItem('todo-projects'));
         manualReload(); //Reload the display tasks to see the new task
     });
 
@@ -59,7 +61,7 @@ const DialogHandler = (function () {
         event.preventDefault();
         projectDialog.close();
 
-        new Project(inputProjectName);
+        new Project(inputProjectName, []);
         displayProjects(projects.length - 1);
     })
 

@@ -154,6 +154,7 @@ function displayByProject(e) {
     if (!btn) return;
 
     const id = btn.dataset.id;
+    console.log(projects)
     const project = projects.find(project => project.id === id);
     if (!project) return;
 
