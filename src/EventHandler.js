@@ -123,7 +123,7 @@ function setupListeners() {
             //Handle Changing status
             const inputCheckbox = document.querySelector('.task-info-dialog .status img');
             inputCheckbox.addEventListener('click', () => {
-                targetTask.status = !targetTask.status;
+                targetTask.changeStatus();
                 targetTask.status ? inputCheckbox.src = checkCircle : inputCheckbox.src = radioboxBlank;
             })
 
@@ -132,13 +132,12 @@ function setupListeners() {
             taskInfoSubmitButton.addEventListener('click', (e) => {
                 //Updating priority
                 const inputPriority = document.querySelector('.task-info-dialog #priority').value;
-                targetTask.priority = Number(inputPriority);
+                targetTask.changePriority(Number(inputPriority));
 
                 //Updating Project
                 const inputProject = document.querySelector('.task-info-dialog #project-select').value;
                 if (targetTask.project !== inputProject) {
-                    targetTask.project = inputProject;
-                    addTaskstoProjects();
+                    targetTask.changeProject(inputProject);
                 }
 
                 e.preventDefault();

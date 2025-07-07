@@ -31,6 +31,29 @@ class Task {
         saveProjects(projects);
     }
 
+    changePriority(inputPriority) {
+        //Removing and adding back the task to update the project list
+        const projectObject = projects.find(pro => pro.name === this.project);
+        projectObject.removeTaskFromProject(this);
+
+        this.priority = inputPriority;
+
+        projectObject.addTaskToProject(this);
+        saveProjects(projects);
+    }
+
+    changeProject(inputProject) {
+        //Removing and changing destination project to modify lists for both
+        const initialProjectObject = projects.find(pro => pro.name === this.project);
+        const destinationProjectObject = projects.find(pro => pro.name === inputProject);
+        initialProjectObject.removeTaskFromProject(this);
+
+        this.project = inputProject;
+
+        destinationProjectObject.addTaskToProject(this);
+        saveProjects(projects);
+    }
+
     getStatus = () => this.status;
 }
 
